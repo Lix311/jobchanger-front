@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 
+
 class Login extends Component {
     
     state = {  
         username: '',
-        password: ''
+        password: '',
+        newusername: '',
+        newpassword: '',
+        button: false
+        
     }
     
     handleInput = (event) => {
@@ -15,17 +20,24 @@ class Login extends Component {
         })
     }
 
-    handleSubmit = (event) => {
+    handleNewUser = (event) => {
+       
+        event.preventDefault();
+        let {newusername,newpassword} = event.target
+        this.props.signup(newusername.value, newpassword.value)
+
+        this.props.history.push('/jobsearch')
+}
+
+
+
+    handleLogin = (event) => {
        
         event.preventDefault();
         let {username,password} = event.target
         this.props.login(username.value, password.value)
 
         this.props.history.push('/jobsearch')
-
-
-        
-        
     }
 
     signOut = (event) => {
@@ -35,13 +47,17 @@ class Login extends Component {
         
     }
 
+    signUpHandler = () => {
+        this.setState({button: !this.state.button})
+    }
+
     
     
 render() { 
         return (  
             <div>
-                <h1>Log In</h1>
-                <form onSubmit={(event) => this.handleSubmit(event)}>
+               <h1>Login</h1>
+                <form onSubmit={(event) => this.handleLogin(event)}>
                     <label>Username</label>
                     <br/>
                     <input 
@@ -69,6 +85,38 @@ render() {
                     <input type='submit' value='Login' />
                     </form>
                     <button onClick={this.signOut}>Log Out</button>
+                    <br/>
+
+                    <h1>Create New User</h1>
+                <form onSubmit={(event) => this.handleNewUser(event)}>
+                    <label>Username</label>
+                    <br/>
+                    <input 
+                        type='text' 
+                        placeholder='Please enter your username' 
+                        id='newusername' 
+                        name='newusername'
+                        value={this.state.newusername}
+                        onChange={this.handleInput}
+                    />
+                    <br/>
+                    <br/>
+                    <label>Password</label>
+                    <br/>
+                    <input 
+                        type='password' 
+                        placeholder='Please enter your password' 
+                        id='newpassword' 
+                        name='newpassword'
+                        value={this.state.newpassword}
+                        onChange={this.handleInput}
+                    />
+                    <br/>
+                    <br/>
+                    <input type='submit' value='Login' />
+                    </form>
+
+                    
 
             </div>
         );

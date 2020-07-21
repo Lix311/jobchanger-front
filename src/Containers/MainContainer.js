@@ -37,7 +37,8 @@ class MainContainer extends Component {
                     exact path="/login"
                     render={()=>
                         <Login 
-                        login ={this.props.login}
+                        login = {this.props.login}
+                        signup ={this.props.signup}
                         />
                     }
                 />
