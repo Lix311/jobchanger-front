@@ -9,6 +9,8 @@ class Login extends Component {
         password: '',
         newusername: '',
         newpassword: '',
+        newavatar: '',
+        newemail:'',
         button: false
         
     }
@@ -23,8 +25,8 @@ class Login extends Component {
     handleNewUser = (event) => {
        
         event.preventDefault();
-        let {newusername,newpassword} = event.target
-        this.props.signup(newusername.value, newpassword.value)
+        let {newusername,newpassword,newemail,newavatar} = event.target
+        this.props.signup(newusername.value, newpassword.value, newemail.value, newavatar.value)
 
         this.props.history.push('/jobsearch')
 }
@@ -109,6 +111,30 @@ render() {
                         id='newpassword' 
                         name='newpassword'
                         value={this.state.newpassword}
+                        onChange={this.handleInput}
+                    />
+                    <br/>
+                    <br/>
+                    <label>Email</label>
+                    <br/>
+                    <input 
+                        type='text' 
+                        placeholder='Please enter your email address' 
+                        id='newemail' 
+                        name='newemail'
+                        value={this.state.newemail}
+                        onChange={this.handleInput}
+                    />
+                    <br/>
+                    <br/>
+                    <label>Avatar</label>
+                    <br/>
+                    <input 
+                        type='text' 
+                        placeholder='Please enter your picture' 
+                        id='newavatar' 
+                        name='newavatar'
+                        value={this.state.newavatar}
                         onChange={this.handleInput}
                     />
                     <br/>

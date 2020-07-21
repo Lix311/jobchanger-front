@@ -12,7 +12,7 @@ class App extends Component {
   
   
   
-  signUpHandler = (username, password) => {
+  signUpHandler = (username, password, email, avatar) => {
     console.log(username,password,'logging in...')
 
     fetch('http://localhost:3001/api/v1/users', {
@@ -23,10 +23,10 @@ class App extends Component {
   },
   body: JSON.stringify({
     user: {
-      username: "sylviawoods",
-      password: "whatscooking",
-      email: "woods@woods.com",
-      avatar: "https://upload.wikimedia.org/wikipedia/commons/4/49/Syvia_of_Sylvia%27s_reaturant_N.Y.C_%28cropped%29.jpg"
+      username: username,
+      password: password,
+      email: email,
+      avatar: avatar
     }
   })
 })
