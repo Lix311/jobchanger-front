@@ -13,6 +13,7 @@ class MainContainer extends Component {
             <NavBar />
             <Switch>
                 <Route
+                
                     exact path="/jobsearch"
                     render={()=>
                         <JobSearchContainer />

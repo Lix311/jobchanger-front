@@ -4,8 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MainContainer from './Containers/MainContainer'
 
 class App extends Component {
+  
+  componentDidMount(){
+    console.log('hello world')
+  }
+  
   state = {  
-    currentUser: null
+    currentUser: ''
   }
 
   setUser = (user) => {
@@ -13,22 +18,35 @@ class App extends Component {
   }
   
   loginHandler = (username,password) => {
-    console.log(username,password,'...signed in')
+    console.log(username,password,'...logged in')
 
-    fetch('http://localhost:3001/api/v1/profile', {
-      method: 'GET',
+    fetch('http://localhost:3001/api/v1/login', {
+      method: 'POST',
       headers: {
-        Authorization: `Bearer <token>`
-      }
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        user: {
+          username: username,
+          password: password
+        }
+      })
     })
     .then(r => r.json())
-    .then(console.log)
-}
-  
+.then(data => {
+  if(data.errors){
+    alert(data.errors)
+  } else {
+    console.log(data)
+    this.setState({currentUser: data})
+  }
+})
+} 
   
   
 signUpHandler = (username, password, email, avatar) => {
-  console.log(username,password,'logging in...')
+  console.log(username,password,'signing in...')
 
   fetch('http://localhost:3001/api/v1/signup', {
 method: 'POST',
@@ -55,8 +73,6 @@ body: JSON.stringify({
 
   }
 })
-
-
 } 
   
   render() { 
