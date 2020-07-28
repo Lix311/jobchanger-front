@@ -5,12 +5,17 @@ import MainContainer from './Containers/MainContainer'
 
 class App extends Component {
   
-  componentDidMount(){
-    console.log('hello world')
-  }
   
   state = {  
-    currentUser: ''
+    currentUser: '',
+    jobs: []
+  }
+
+  componentDidMount(){
+    // fetch('https://jobs.github.com/positions.json?description=ruby&page=1')
+    // .then(res => res.json())
+    // .then(data => this.setState({jobs: data}))
+    // .then(console.log(this.state.jobs))
   }
 
   setUser = (user) => {
@@ -79,6 +84,7 @@ body: JSON.stringify({
     return (  
       <div className="App">
         <MainContainer 
+          jobs = {this.state.jobs}
           login = {this.loginHandler}
           signup = {this.signUpHandler}
         />

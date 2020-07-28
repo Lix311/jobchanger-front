@@ -16,7 +16,9 @@ class MainContainer extends Component {
                 
                     exact path="/jobsearch"
                     render={()=>
-                        <JobSearchContainer />
+                        <JobSearchContainer 
+                        jobs = {this.props.jobs}
+                        />
                     }
                 /> 
                 

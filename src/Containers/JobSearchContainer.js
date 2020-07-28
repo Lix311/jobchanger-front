@@ -2,12 +2,14 @@ import React from 'react';
 import JobsContainer from './JobsContainer'
 
 
-const JobSearchContainer = () => {
+const JobSearchContainer = (props) => {
     return (  
         <div>
             
            <h2>JobSearchContainer</h2>
-           <JobsContainer/>
+           <JobsContainer
+            jobs = {props.jobs}
+           />
            
         </div>
     );
