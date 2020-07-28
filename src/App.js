@@ -12,10 +12,10 @@ class App extends Component {
   }
 
   componentDidMount(){
-    // fetch('https://jobs.github.com/positions.json?description=ruby&page=1')
-    // .then(res => res.json())
-    // .then(data => this.setState({jobs: data}))
-    // .then(console.log(this.state.jobs))
+    fetch('http://localhost:3001/jobs')
+    .then(res => res.json())
+    .then(data => this.setState({jobs: data}))
+    .then(console.log(this.state.jobs))
   }
 
   setUser = (user) => {
