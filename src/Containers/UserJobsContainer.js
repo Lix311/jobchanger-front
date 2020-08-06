@@ -1,17 +1,23 @@
 import React from 'react';
-import {Table} from 'react-bootstrap'
+import {Table,Button} from 'react-bootstrap'
 import styled from 'styled-components'
 import AddJobForm from '../Components/AddJobForm';
 
 const StyledTable = styled.div`
-max-width: 75%;
 display: flex;
-flex-wrap: wrap;
-
+width: 100%;
+padding: 10px;
 `
 const StyledForm = styled.div`
-display: flex;
 float: right;
+border: solid;
+width: 400px;
+height: 275px;
+padding: 50px;
+text-align: center;
+margin: 15px;
+
+
 
 `
 
@@ -19,7 +25,6 @@ float: right;
 const UserJobsContainer = (props) => {
     return (  
         <div>
-           <h2>UserJobsContainer</h2>
            <StyledTable>
            <Table striped bordered hover size="sm">
                 <thead>
@@ -33,6 +38,7 @@ const UserJobsContainer = (props) => {
                     <th>Notes</th>
                     <th>Next Step</th>
                     
+                    
                     </tr>
                 </thead>
                 <tbody>
@@ -45,14 +51,30 @@ const UserJobsContainer = (props) => {
                     <td>FullStack Developer </td>
                     <td>They havent answered, need to follow up.</td>
                     <td>Contact John to schedule phone screening</td>
+                    <td><Button variant="warning">Edit</Button>{' '}</td>
+                    </tr>
+                    </tbody>
+                    <tbody>
+                    <tr>
+                    <td>1</td>
+                    <td>Google</td>
+                    <td>Applied</td>
+                    <td>John.Smith@google.com</td>
+                    <td>Phone Screening</td>
+                    <td>FullStack Developer </td>
+                    <td>They havent answered, need to follow up.</td>
+                    <td>Contact John to schedule phone screening</td>
+                    <td><Button variant="warning">Edit</Button>{' '}</td>
                     </tr>
                     </tbody>
             </Table>
-            </StyledTable>
             
             <StyledForm>
                 <AddJobForm/> 
             </StyledForm> 
+            
+            
+            </StyledTable>
             
               
         </div>
