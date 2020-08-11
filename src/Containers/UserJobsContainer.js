@@ -64,7 +64,7 @@ const UserJobsContainer = (props) => {
                     <td>FullStack Developer </td>
                     <td>They havent answered, need to follow up.</td>
                     <td>Contact John to schedule phone screening</td>
-                    <td><Button variant="warning">Edit</Button>{' '}</td>
+                    <td><Button variant="success">Edit</Button>{' '}</td>
                     </tr>
                     </tbody>
             </Table>
