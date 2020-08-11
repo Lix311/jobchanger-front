@@ -4,7 +4,7 @@ import Job from '../Components/Job'
 const JobsContainer = (props) => {
     return (  
         <div>
-            <small>jobs container</small>
+            <h3>jobs container</h3>
             {props.jobs.map(job => 
                 <Job 
                     job={job}

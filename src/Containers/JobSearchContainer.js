@@ -1,5 +1,6 @@
 import React from 'react';
 import JobsContainer from './JobsContainer'
+import { connect } from 'react-redux'
 
 
 const JobSearchContainer = (props) => {
@@ -14,5 +15,11 @@ const JobSearchContainer = (props) => {
         </div>
     );
 }
+
+const msp = state => {
+    return {
+        jobs: state.jobs
+    }
+}
  
-export default JobSearchContainer;
+export default connect(msp)(JobSearchContainer);

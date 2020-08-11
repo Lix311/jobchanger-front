@@ -2,20 +2,31 @@ import React, {Component} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MainContainer from './Containers/MainContainer'
+import { connect } from 'react-redux'
+import { fetchCreator } from './reducer'
 
 class App extends Component {
   
   
   state = {  
     currentUser: '',
-    jobs: []
+    jobs: [],
   }
 
+  addJob = (event) => {
+     
+    let company = event.target['formGroupCompany'].value // you can prob refactor this
+    let title = event.target['formGroupTitle'].value
+    
+    console.log(company,title)
+  }
+  
   componentDidMount(){
-    fetch('http://localhost:3001/jobs')
-    .then(res => res.json())
-    .then(data => this.setState({jobs: data}))
-    .then(console.log(this.state.jobs))
+    // fetch('http://localhost:3001/jobs')
+    // .then(res => res.json())
+    // .then(data => this.setState({jobs: data}))
+    // .then(console.log(this.state.jobs))
+    this.props.fetchJobs()
   }
 
   setUser = (user) => {
@@ -87,12 +98,18 @@ body: JSON.stringify({
           jobs = {this.state.jobs}
           login = {this.loginHandler}
           signup = {this.signUpHandler}
+          addJob = {this.addJob}
         />
     </div>
     );
   }
 }
- 
-export default App;
+
+const mdp = dispatch => {
+  return {
+    fetchJobs: () => dispatch(fetchCreator())
+  }
+}
+export default connect (null, mdp)(App);
 
 

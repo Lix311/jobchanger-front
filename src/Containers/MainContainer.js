@@ -32,7 +32,9 @@ class MainContainer extends Component {
                 <Route
                     exact path="/jobs"
                     render={()=>
-                        <UserJobsContainer />
+                        <UserJobsContainer 
+                        addJob = {this.props.addJob}
+                        />
                     }
                 />
 

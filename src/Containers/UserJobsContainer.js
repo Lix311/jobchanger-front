@@ -2,6 +2,7 @@ import React from 'react';
 import {Table,Button} from 'react-bootstrap'
 import styled from 'styled-components'
 import AddJobForm from '../Components/AddJobForm';
+import { connect } from 'react-redux';
 
 const StyledTable = styled.div`
 display: flex;
@@ -16,11 +17,7 @@ height: 275px;
 padding: 50px;
 text-align: center;
 margin: 15px;
-
-
-
 `
-
 
 const UserJobsContainer = (props) => {
     return (  
@@ -44,11 +41,11 @@ const UserJobsContainer = (props) => {
                 <tbody>
                     <tr>
                     <td>1</td>
-                    <td>Google</td>
+                    <td>{props.appliedJobs[0].company}</td>
                     <td>Applied</td>
                     <td>John.Smith@google.com</td>
                     <td>Phone Screening</td>
-                    <td>FullStack Developer </td>
+                    <td>{props.appliedJobs[0].title}</td>
                     <td>They havent answered, need to follow up.</td>
                     <td>Contact John to schedule phone screening</td>
                     <td><Button variant="warning">Edit</Button>{' '}</td>
@@ -70,16 +67,22 @@ const UserJobsContainer = (props) => {
             </Table>
             
             <StyledForm>
-                <AddJobForm/> 
+                <AddJobForm addJob = {props.addJob}/> 
             </StyledForm> 
             
             
             </StyledTable>
-            
               
         </div>
         
     );
 }
+
+const msp = state => {
+    return {
+        appliedJobs: state.appliedJobs
+    }
+}
  
-export default UserJobsContainer;
+export default connect(msp)(UserJobsContainer);
+ 
