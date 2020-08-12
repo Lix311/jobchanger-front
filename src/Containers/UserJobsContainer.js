@@ -21,7 +21,10 @@ margin: 15px;
 
 const UserJobsContainer = (props) => {
     return (  
+        
         <div>
+        {console.log(props)}
+
            <StyledTable>
            <Table striped bordered hover size="sm">
                 <thead>
@@ -38,36 +41,26 @@ const UserJobsContainer = (props) => {
                     
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                    <td>1</td>
-                    <td>{props.appliedJobs[0].company}</td>
-                    <td>Applied</td>
-                    <td>John.Smith@google.com</td>
-                    <td>Phone Screening</td>
-                    <td>{props.appliedJobs[0].title}</td>
-                    <td>They havent answered, need to follow up.</td>
-                    <td>Contact John to schedule phone screening</td>
-                    <td><Button variant="warning">Edit</Button>{' '}</td>
-                    </tr>
-                    </tbody>
-                    <tbody>
-                    <tr>
-                    <td>1</td>
-                    <td>Google</td>
-                    <td>Applied</td>
-                    <td>John.Smith@google.com</td>
-                    <td>Phone Screening</td>
-                    <td>FullStack Developer </td>
-                    <td>They havent answered, need to follow up.</td>
-                    <td>Contact John to schedule phone screening</td>
-                    <td><Button variant="success">Edit</Button>{' '}</td>
-                    </tr>
-                    </tbody>
+                    
+                 {props.appliedJobs.map(job => 
+                     <tbody>
+                     <tr>
+                     <td>1</td>
+                     <td>{job.company}</td>
+                     <td>Applied</td>
+                     <td>John.Smith@google.com</td>
+                     <td>Phone Screening</td>
+                     <td>{job.title}</td>
+                     <td>They havent answered, need to follow up.</td>
+                     <td>Contact John to schedule phone screening</td>
+                     <td><Button variant="warning">Edit</Button>{' '}</td>
+                     </tr>
+                     </tbody>
+                 )}
             </Table>
             
             <StyledForm>
-                <AddJobForm addJob = {props.addJob}/> 
+                <AddJobForm/> 
             </StyledForm> 
             
             

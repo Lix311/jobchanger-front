@@ -98,7 +98,7 @@ body: JSON.stringify({
           jobs = {this.state.jobs}
           login = {this.loginHandler}
           signup = {this.signUpHandler}
-          addJob = {this.addJob}
+          
         />
     </div>
     );

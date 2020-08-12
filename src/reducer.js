@@ -17,7 +17,16 @@ export const fetchCreator = () => dispatch => {
 export const reducer = (prevState=initialState, action) => {
     switch(action.type){
         case 'ADD_JOB':
-            return {...prevState}
+            action.payload.event.preventDefault();
+            let company = action.payload.event.target['formGroupCompany'].value // you can prob refactor this
+            let title = action.payload.event.target['formGroupTitle'].value
+            let job = {company,title}
+            console.log('reducer adding job', job.company)
+            return {...prevState,
+                    job: '',
+                    appliedJobs: [...prevState.appliedJobs, job]}
+        
+        
         case 'EDIT_JOB':
             return {...prevState}
         case 'FETCH_JOBS':
