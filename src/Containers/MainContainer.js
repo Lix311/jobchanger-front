@@ -35,6 +35,7 @@ class MainContainer extends Component {
                     render={()=>
                         <UserJobsContainer 
                         addJob = {this.props.addJob}
+                        userJobs ={this.props.userJobs}
                         />
                     }
                 />

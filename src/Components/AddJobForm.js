@@ -1,19 +1,40 @@
 import React, { Component } from 'react';
 import {Form, Button} from 'react-bootstrap'
-
+import styled from 'styled-components'
 
 // make this have state to hold values?
 
+const StyledForm = styled.div`
+float: right;
+border: solid;
+width: 400px;
+height: 100%;
+padding: 50px;
+text-align: center;
+margin: 15px;
+`
+
+
 class AddJobForm extends Component {
   state = {  
+    formDisplay: false 
   }
+
+
+  toggleForm = (event) => {
+    this.setState({formDisplay: !this.state.formDisplay})
+}
   
   render() { 
     return (  
       <div>
+            
+            <StyledForm>
             <h1>Add a Job</h1>
-            <Form onSubmit={(event) => this.props.addJob(event)}> 
-            <Form.Group controlId="formGroupCompany">
+            <Form onClick={event => this.toggleForm(event)} onSubmit={(event) => this.props.addJob(event)}> 
+           
+           
+           <Form.Group controlId="formGroupCompany">
               <Form.Label>Company</Form.Label>
               <Form.Control type="company" placeholder="Enter company" />
             </Form.Group>
@@ -37,8 +58,14 @@ class AddJobForm extends Component {
               <Form.Label>Next Step</Form.Label>
               <Form.Control as="textarea" rows="2" />
             </Form.Group>
+            <Form.Group controlId="formGroupContact">
+              <Form.Label>Contact</Form.Label>
+              <Form.Control as="textarea" rows="2" />
+            </Form.Group>
             <Button variant='primary' type='submit'>Submit</Button>
+           
           </Form>
+          </StyledForm>
         </div>
     );
   }

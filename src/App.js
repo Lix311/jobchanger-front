@@ -10,7 +10,8 @@ class App extends Component {
     currentUser: '',
     jobs: [],
     userJobs: [], // pass this to userjobscontainer 
-    staticJobs: []
+    staticJobs: [],
+    userCurrentJobs: []
   }
 
   componentDidMount(){
@@ -33,7 +34,8 @@ class App extends Component {
       status: event.target['formGroupStatus'].value,
       action: event.target['formGroupAction'].value,
       notes: event.target['formGroupNotes'].value,
-      next_step: event.target['formGroupNextStep'].value // this goes to userjobs
+      next_step: event.target['formGroupNextStep'].value, // this goes to userjobs
+      contact: event.target['formGroupContact'].value
     } 
 
     let staticnewJob = {
@@ -104,6 +106,15 @@ class App extends Component {
   } else {
     console.log(data)
     this.setState({currentUser: data})
+    fetch('http://localhost:3001/userjobs')
+    .then(res => res.json())
+    .then(data => { 
+      this.setState({userJobs: data})
+      console.log(this.state.userJobs)
+      const currentUserJobs = this.state.userJobs.filter(job => job.user_id === this.state.currentUser.id)
+      console.log(currentUserJobs)
+      this.setState({userCurrentJobs: currentUserJobs}) 
+    })
   }
 })
 } 
@@ -147,6 +158,7 @@ body: JSON.stringify({
           login = {this.loginHandler}
           signup = {this.signUpHandler}
           addJob = {this.addJob}
+          userJobs ={this.state.userCurrentJobs}
         />
     </div>
     );
