@@ -9,6 +9,7 @@ const JobSearchContainer = (props) => {
            <h2>JobSearchContainer</h2>
            <JobsContainer
             jobs = {props.jobs}
+            addJob = {props.addJob}
            />
            
         </div>

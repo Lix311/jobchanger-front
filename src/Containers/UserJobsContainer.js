@@ -12,7 +12,7 @@ const StyledForm = styled.div`
 float: right;
 border: solid;
 width: 400px;
-height: 275px;
+height: 100%;
 padding: 50px;
 text-align: center;
 margin: 15px;
@@ -70,7 +70,7 @@ const UserJobsContainer = (props) => {
             </Table>
             
             <StyledForm>
-                <AddJobForm/> 
+                <AddJobForm addJob = {props.addJob}/> 
             </StyledForm> 
             
             
