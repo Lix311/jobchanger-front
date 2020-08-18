@@ -26,9 +26,8 @@ class App extends Component {
   addJob = (event) => {
     event.preventDefault()
     let newJob = {
-      
       user_id: this.state.currentUser.id,
-      job_id: parseInt(this.state.staticJobs.length + 1), 
+      job_id: this.state.staticJobs.length + 1, 
       company: event.target['formGroupCompany'].value,
       title: event.target['formGroupTitle'].value,
       status: event.target['formGroupStatus'].value,
@@ -49,6 +48,7 @@ class App extends Component {
 
     this.setState({staticJobs: [...this.state.staticJobs, staticnewJob]})
     this.setState({userJobs: [...this.state.userJobs, newJob]})
+    this.setState({userCurrentJobs: [...this.state.userCurrentJobs, newJob]})
     //set state to add newJob to static jobs and post to static jobs
     //set state to userjobs and post to userjobs
 

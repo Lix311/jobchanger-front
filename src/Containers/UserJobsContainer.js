@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Table,Button} from 'react-bootstrap'
 import styled from 'styled-components'
 import AddJobForm from '../Components/AddJobForm';
+import JobRow from '../Components/JobRow'
 
 const StyledTable = styled.div`
 display: flex;
@@ -44,18 +45,7 @@ class UserJobsContainer extends Component {
                         
                         {this.props.userJobs ? this.props.userJobs.map(job => 
                                 <tbody>
-                                    {console.log(this.props.userJobs)}
-                                <tr>
-                                <td>{job.id}</td>
-                                <td>{job.company}</td>
-                                <td>{job.status}</td>
-                                <td>{job.contact}</td>
-                                <td>{job.action}</td>
-                                <td>{job.title}</td>
-                                <td>{job.notes}</td>
-                                <td>{job.next_step}</td>
-                                <td><Button variant="warning">Edit</Button>{' '}</td>
-                                </tr>
+                                <JobRow key={job.id} job={job}/> 
                                 </tbody>
                             ) : ''}
                         
