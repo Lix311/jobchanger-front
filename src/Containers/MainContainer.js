@@ -36,6 +36,7 @@ class MainContainer extends Component {
                         <UserJobsContainer 
                         addJob = {this.props.addJob}
                         userJobs ={this.props.userJobs}
+                        editJob = {this.props.editJob}
                         />
                     }
                 />

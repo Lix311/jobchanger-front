@@ -42,10 +42,10 @@ class UserJobsContainer extends Component {
                             <th>Next Step</th>
                             </tr>
                         </thead>
-                        
-                        {this.props.userJobs ? this.props.userJobs.map(job => 
+                        {console.log('sortedjobs', this.props.userJobs)}
+                        {this.props.userJobs ? this.props.userJobs.sort((a,b) => a.id - b.id).map(job => 
                                 <tbody>
-                                <JobRow key={job.id} job={job}/> 
+                                <JobRow key={job.id} job={job} editJob = {this.props.editJob}/> 
                                 </tbody>
                             ) : ''}
                         

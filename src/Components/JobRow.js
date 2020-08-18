@@ -3,7 +3,7 @@ import {Table,Button} from 'react-bootstrap'
 
 class JobRow extends Component {
     state = {  
-        job_id: null,
+        userjobId: null,
         company: '', //make this
         status: '',
         contact: '',
@@ -15,7 +15,7 @@ class JobRow extends Component {
     }
 
     componentDidMount(){
-        this.setState({job_id: this.props.job.job_id})
+        this.setState({userjobId: this.props.job.id}) // might want to change to key 
         this.setState({company: this.props.job.company})
         this.setState({status: this.props.job.status})
         this.setState({contact: this.props.job.contact})
@@ -27,23 +27,38 @@ class JobRow extends Component {
     
     editHandler = () => {
         this.setState({editing: !this.state.editing})
+        console.log('editing in JobRow')
+        
+    }
+
+    saveHandler = () => {
+        this.setState({editing: !this.state.editing})
+        this.props.editJob(this.state)
+        // call editJob in app.js
+    }
+
+    handleChange = event => {
+       this.setState({[event.target.name]: event.target.value})
+
     }
     
     
     render() { 
         return (  
 
+            // add onChange to each <td><input>
+            // also have to persist to backend, update userjob in app.js when clicking save button  
             
             <tr>
             <td>{this.props.job.job_id}</td>
-            <td> {this.state.editing ? <input value={this.state.company}/> : this.state.company}</td>
-            <td>{this.state.editing ? <input value={this.state.status}/> : this.state.status}</td>
-            <td>{this.state.editing ? <input value={this.state.contact}/> : this.state.contact}</td>
-            <td>{this.state.editing ? <input value={this.state.action}/> : this.state.action}</td>
-            <td>{this.state.editing ? <input value={this.state.title}/> : this.state.title}</td>
-            <td>{this.state.editing ? <input value={this.state.notes}/> : this.state.notes}</td>
-            <td>{this.state.editing ? <input value={this.state.next_step}/> : this.state.next_step}</td>
-            <td>{this.state.editing ? <Button onClick={this.editHandler} variant="success">Save</Button> : <Button onClick={this.editHandler} variant="warning">Edit</Button>}</td>
+            <td> {this.state.company}</td> 
+            <td>{this.state.editing ? <input name='status'onChange={event => this.handleChange(event)} value={this.state.status}/> : this.state.status}</td>
+            <td>{this.state.editing ? <input name='contact' onChange={event => this.handleChange(event)} value={this.state.contact}/> : this.state.contact}</td>
+            <td>{this.state.editing ? <input name='action' onChange={event => this.handleChange(event)} value={this.state.action}/> : this.state.action}</td>
+            <td>{this.state.title}</td>
+            <td>{this.state.editing ? <input name='notes' onChange={event => this.handleChange(event)} value={this.state.notes}/> : this.state.notes}</td>
+            <td>{this.state.editing ? <input name='next_step' onChange={event => this.handleChange(event)} value={this.state.next_step}/> : this.state.next_step}</td>
+            <td>{this.state.editing ? <Button onClick={this.saveHandler} variant="success">Save</Button> : <Button onClick={this.editHandler} variant="warning">Edit</Button>}</td>
             </tr>
             
             );

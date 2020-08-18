@@ -23,6 +23,45 @@ class App extends Component {
     .then(data => this.setState({staticJobs: data}))
   }
 
+  editJob = (state) => {
+    let target = this.state.userCurrentJobs.find(currentgame => currentgame.id === state.userjobId)
+
+    if (target ===undefined){
+      return 
+    }
+
+    fetch(`http://localhost:3001/userjobs/${state.userjobId}`, {
+      method:'PATCH',
+      headers:{"Content-Type": "application/json"},
+      body:JSON.stringify({
+      status: state.status,
+      contact: state.contact,
+      action: state.action,
+      notes: state.notes,
+      next_step: state.next_step
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      let target = this.state.userCurrentJobs.find(currentgame => currentgame.id === state.userjobId)
+      let index = this.state.userCurrentJobs.indexOf(target)
+      let updatedJobs = [...this.state.userCurrentJobs]
+  
+      updatedJobs[index].status = state.status
+      updatedJobs[index].contact = state.contact
+      updatedJobs[index].action = state.action
+      updatedJobs[index].notes = state.notes
+      updatedJobs[index].next_step = state.next_step
+      
+      this.setState({userCurrentJobs: updatedJobs})
+
+
+    })
+
+
+    // take state and patch backend 
+  }
+
   addJob = (event) => {
     event.preventDefault()
     let newJob = {
@@ -158,6 +197,7 @@ body: JSON.stringify({
           login = {this.loginHandler}
           signup = {this.signUpHandler}
           addJob = {this.addJob}
+          editJob = {this.editJob}
           userJobs ={this.state.userCurrentJobs}
         />
     </div>
