@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Card} from 'react-bootstrap'
 import styled, {css, keyframes} from 'styled-components'
 
 // make this have state to hold values?
@@ -45,8 +45,8 @@ class AddJobForm extends Component {
   render() { 
     return (  
       <div>
-            
             <StyledForm primary={this.state.formDisplay}>
+
             <h2>Add Custom Job</h2>
             <br/>
             <Button onClick={this.toggleForm}>Add Job</Button>
