@@ -62,8 +62,8 @@ class App extends Component {
     // take state and patch backend 
 }
 
-deleteJob = () => {
-  console.log('deleting...')
+deleteJob = (job) => {
+  console.log(job) // use this to filter userjobs
 }
 
   addJob = (event) => {
