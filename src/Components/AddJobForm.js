@@ -1,34 +1,9 @@
 import React, { Component } from 'react';
 import {Form, Button, Card} from 'react-bootstrap'
 import styled, {css, keyframes} from 'styled-components'
+import '../App.css'
 
 // make this have state to hold values?
-
-const expand = keyframes`
-from {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-to {
-  transform: translateY(0);
-  opacity: 1;
-}
-`
-const animationRule = css`
-${expand} 2s 0s both
-`
-
-const StyledForm = styled.div`
-float: right;
-border: solid;
-width: 400px;
-height: ${(props) => props.primary ? '100%' : '200px'};
-padding: 50px;
-text-align: center;
-margin: 15px;
-`
-
-
 
 class AddJobForm extends Component {
   state = {  
@@ -45,14 +20,12 @@ class AddJobForm extends Component {
   render() { 
     return (  
       <div>
-            <StyledForm primary={this.state.formDisplay}>
+            {/* <StyledForm primary={this.state.formDisplay}> */}
 
+            <Form className='jobform' onSubmit={(event) => this.props.addJob(event)}> 
             <h2>Add Custom Job</h2>
             <br/>
             <Button onClick={this.toggleForm}>Add Job</Button>
-            
-            <Form onSubmit={(event) => this.props.addJob(event)}> 
-           
            { this.state.formDisplay ? 
            
            <div>
@@ -88,7 +61,7 @@ class AddJobForm extends Component {
             <Button variant='primary' type='submit'>Submit</Button>
             </div> : ''}
           </Form>
-          </StyledForm>
+          {/* </StyledForm> */}
         </div>
     );
   }
