@@ -1,34 +1,16 @@
 import React, { Component } from 'react';
 import {Table,Button} from 'react-bootstrap'
-import styled from 'styled-components'
 import AddJobForm from '../Components/AddJobForm';
 import JobRow from '../Components/JobRow'
-
-const StyledTable = styled.div`
-display: flex;
-width: 100%;
-padding: 10px;
-`
-// const StyledForm = styled.div`
-// float: right;
-// border: solid;
-// width: 400px;
-// height: 100%;
-// padding: 50px;
-// text-align: center;
-// margin: 15px;
-// `
+import '../App.css'
 
 class UserJobsContainer extends Component {
     state = {  }
-    
-   
-    
     render() { 
         return (  
 
-            <div>
-                   <StyledTable>
+            <div className='userjobstable'>
+                   {/* <StyledTable> */}
                    <Table striped bordered hover size="sm">
                         <thead>
                             <tr>
@@ -51,15 +33,8 @@ class UserJobsContainer extends Component {
                         
                     </Table>
                     
-                    {/* <StyledForm> */}
                         <AddJobForm addJob={this.props.addJob}/> 
-                    {/* </StyledForm>  */}
-                    
-                    
-                    </StyledTable>
-                    
-                      
-                </div>
+            </div>
                 
             );
         }

@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.jobform {
+.jobformopen {
   float: right;
   border: solid;
   width: 400px;
@@ -10,6 +10,22 @@
   padding: 50px;
   text-align: center;
   margin: 15px;
+}
+
+.jobformclosed {
+  float: right;
+  border: solid;
+  width: 400px;
+  height: 200px;
+  padding: 50px;
+  text-align: center;
+  margin: 15px;
+}
+
+.userjobstable {
+  display: flex;
+  width: 100%;
+  padding: 10px;
 }
 
 .App-logo {

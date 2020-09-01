@@ -22,7 +22,7 @@ class AddJobForm extends Component {
       <div>
             {/* <StyledForm primary={this.state.formDisplay}> */}
 
-            <Form className='jobform' onSubmit={(event) => this.props.addJob(event)}> 
+            <Form className={this.state.formDisplay ? 'jobformopen' : 'jobformclosed'} onSubmit={(event) => this.props.addJob(event)}> 
             <h2>Add Custom Job</h2>
             <br/>
             <Button onClick={this.toggleForm}>Add Job</Button>
