@@ -59,6 +59,7 @@ class JobRow extends Component {
             <td>{this.state.editing ? <input name='notes' onChange={event => this.handleChange(event)} value={this.state.notes}/> : this.state.notes}</td>
             <td>{this.state.editing ? <input name='next_step' onChange={event => this.handleChange(event)} value={this.state.next_step}/> : this.state.next_step}</td>
             <td>{this.state.editing ? <Button onClick={this.saveHandler} variant="success">Save</Button> : <Button onClick={this.editHandler} variant="warning">Edit</Button>}</td>
+            <td><Button onClick={this.props.deleteJob} variant="dark">Delete</Button></td>
             </tr>
             
             );

@@ -27,7 +27,7 @@ class UserJobsContainer extends Component {
                         {console.log('sortedjobs', this.props.userJobs)}
                         {this.props.userJobs ? this.props.userJobs.sort((a,b) => a.id - b.id).map(job => 
                                 <tbody>
-                                <JobRow key={job.id} job={job} editJob = {this.props.editJob}/> 
+                                <JobRow key={job.id} job={job} editJob={this.props.editJob} deleteJob={this.props.deleteJob}/> 
                                 </tbody>
                             ) : ''}
                         

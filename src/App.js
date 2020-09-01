@@ -26,11 +26,11 @@ class App extends Component {
   editJob = (state) => {
     let target = this.state.userCurrentJobs.find(currentgame => currentgame.id === state.userjobId)
 
-    if (target ===undefined){
+    if (target === undefined){
       return 
     }
-
-    fetch(`http://localhost:3001/userjobs/${state.userjobId}`, {
+  
+  fetch(`http://localhost:3001/userjobs/${state.userjobId}`, {
       method:'PATCH',
       headers:{"Content-Type": "application/json"},
       body:JSON.stringify({
@@ -60,7 +60,11 @@ class App extends Component {
 
 
     // take state and patch backend 
-  }
+}
+
+deleteJob = () => {
+  console.log('deleting...')
+}
 
   addJob = (event) => {
     event.preventDefault()
@@ -198,6 +202,7 @@ body: JSON.stringify({
           signup = {this.signUpHandler}
           addJob = {this.addJob}
           editJob = {this.editJob}
+          deleteJob = {this.deleteJob}
           userJobs ={this.state.userCurrentJobs}
         />
     </div>

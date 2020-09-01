@@ -34,9 +34,10 @@ class MainContainer extends Component {
                     exact path="/jobs"
                     render={()=>
                         <UserJobsContainer 
-                        addJob = {this.props.addJob}
-                        userJobs ={this.props.userJobs}
-                        editJob = {this.props.editJob}
+                        addJob={this.props.addJob}
+                        userJobs={this.props.userJobs}
+                        editJob={this.props.editJob}
+                        deleteJob={this.props.deleteJob}
                         />
                     }
                 />
