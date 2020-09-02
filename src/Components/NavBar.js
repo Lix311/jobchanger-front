@@ -1,17 +1,33 @@
 import React from 'react';
-import {Navbar,Nav} from 'react-bootstrap'
+import styled from 'styled-components'
+import {Navbar as BootstrapNav} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+
+const StyledLinks = styled.div`
+
+line-height: 1em;
+    display: flex;
+    text-decoration: none;
+    justify-content: space-between;
+    width: 250px;
+
+`
+
+
+
 
 const NavBar = (props) => {
     return (  
-        <Navbar bg="light" variant="light">
-    <Navbar.Brand href="#home">JobChanger</Navbar.Brand>
-    <Nav className="mr-auto">
-      <Nav.Link href="/jobsearch">Jobs</Nav.Link>
-      <Nav.Link href="/tasks">Tasks</Nav.Link>
-      <Nav.Link href="/jobs">Organize</Nav.Link>
-      <Nav.Link href="/login">Login</Nav.Link>
-    </Nav>
-  </Navbar>
+        <BootstrapNav bg="light" variant="light">
+            <BootstrapNav.Brand href="/login">JobChanger</BootstrapNav.Brand>
+            {/* <Nav className="mr-auto"> */}
+            <StyledLinks>
+              <Link to="/jobsearch">Jobs</Link>
+              <Link to="/tasks">Tasks</Link>
+              <Link to="/jobs">Organize</Link>
+            </StyledLinks>
+            {/* </Nav> */}
+        </BootstrapNav>
     );
 }
  

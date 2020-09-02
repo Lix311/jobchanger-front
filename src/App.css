@@ -2,6 +2,32 @@
   text-align: center;
 }
 
+.jobformopen {
+  float: right;
+  border: solid;
+  width: 400px;
+  height: 100%;
+  padding: 50px;
+  text-align: center;
+  margin: 15px;
+}
+
+.jobformclosed {
+  float: right;
+  border: solid;
+  width: 400px;
+  height: 200px;
+  padding: 50px;
+  text-align: center;
+  margin: 15px;
+}
+
+.userjobstable {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

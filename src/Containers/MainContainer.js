@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import JobSearchContainer from './JobSearchContainer'
 import TaskContainer from './TaskContainer'
-import UserJobContainer from './UserJobsContainer'
+import UserJobsContainer from './UserJobsContainer'
 import NavBar from '../Components/NavBar'
 import Login from '../Components/Login'
 import { Route, Switch } from 'react-router-dom';
@@ -13,9 +13,13 @@ class MainContainer extends Component {
             <NavBar />
             <Switch>
                 <Route
+                
                     exact path="/jobsearch"
                     render={()=>
-                        <JobSearchContainer />
+                        <JobSearchContainer 
+                        jobs = {this.props.jobs}
+                        
+                        />
                     }
                 /> 
                 
@@ -29,7 +33,12 @@ class MainContainer extends Component {
                 <Route
                     exact path="/jobs"
                     render={()=>
-                        <UserJobContainer />
+                        <UserJobsContainer 
+                        addJob={this.props.addJob}
+                        userJobs={this.props.userJobs}
+                        editJob={this.props.editJob}
+                        deleteJob={this.props.deleteJob}
+                        />
                     }
                 />
 
@@ -37,7 +46,8 @@ class MainContainer extends Component {
                     exact path="/login"
                     render={()=>
                         <Login 
-                        login ={this.props.login}
+                        login = {this.props.login}
+                        signup ={this.props.signup}
                         />
                     }
                 />
