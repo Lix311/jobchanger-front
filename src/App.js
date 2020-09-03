@@ -72,7 +72,7 @@ deleteJob = (job) => {
       const filteredUserJobs = this.state.userCurrentJobs.filter(filteredjob => filteredjob != job)
       this.setState({userCurrentJobs: filteredUserJobs})
     })
-    // trying to see email
+    // I needed to change email
 }
 
   addJob = (event) => {
