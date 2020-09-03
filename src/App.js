@@ -9,9 +9,9 @@ class App extends Component {
   state = {  
     currentUser: '',
     jobs: [],
-    userJobs: [], // pass this to userjobscontainer 
+    userJobs: [],
     staticJobs: [],
-    userCurrentJobs: []
+    userCurrentJobs: [] // pass this to userjobscontainer
   }
 
   componentDidMount(){
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   editJob = (state) => {
-    let target = this.state.userCurrentJobs.find(currentgame => currentgame.id === state.userjobId)
+    let target = this.state.userCurrentJobs.find(currentjob => currentjob.id === state.userjobId)
 
     if (target === undefined){
       return 
@@ -64,6 +64,14 @@ class App extends Component {
 
 deleteJob = (job) => {
   console.log(job) // use this to filter userjobs
+
+  fetch(`http://localhost:3001/userjobs/${job.id}`, {
+      method:'DELETE',
+      headers: {"Content-Type": "application/json"}
+    }).then(data => {
+      const filteredUserJobs = this.state.userCurrentJobs.filter(filteredjob => filteredjob != job)
+      this.setState({userCurrentJobs: filteredUserJobs})
+    })
 }
 
   addJob = (event) => {
