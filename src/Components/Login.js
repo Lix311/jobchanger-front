@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
+import {Form,Button} from 'react-bootstrap'
+import '../App.css'
 
 
 class Login extends Component {
@@ -56,9 +58,9 @@ class Login extends Component {
     
 render() { 
         return (  
-            <div>
-               <h1>Login</h1>
-                <form onSubmit={(event) => this.handleLogin(event)}>
+            <div className='login-div'>
+               {/* <h1>Login</h1>
+                <Form className='login-form' onSubmit={(event) => this.handleLogin(event)}>
                     <label>Username</label>
                     <br/>
                     <input 
@@ -84,11 +86,36 @@ render() {
                     <br/>
                     <br/>
                     <input type='submit' value='Login' />
-                    </form>
-                    <button onClick={this.signOut}>Log Out</button>
+                    </Form> 
+               <button onClick={this.signOut}>Log Out</button> */}
                     <br/>
+                    <br/>
+                    
+                    <Form className='login-form'>
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" placeholder="Enter email" />
+                            {/* <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
+                            </Form.Text> */}
+                        </Form.Group>
 
-                    <h1>Create New User</h1>
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" placeholder="Password" />
+                        </Form.Group>
+                        <br/>
+                        <Button className='btn-lg btn-dark btn-block' variant="primary" type="submit">
+                            Login
+                        </Button>
+                        <br/>
+                        <div className='text-center'> Dont Have Account?
+                        <br/>
+                            <a href='/sign-up'>Sign Up</a>
+                        </div>
+                    </Form>
+
+                    {/* <h1>Create New User</h1>
                 <form onSubmit={(event) => this.handleNewUser(event)}>
                     <label>Username</label>
                     <br/>
@@ -139,7 +166,7 @@ render() {
                     <br/>
                     <br/>
                     <input type='submit' value='Login' />
-                    </form>
+                    </form> */}
 
                     
 

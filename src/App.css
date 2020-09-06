@@ -2,6 +2,20 @@
   text-align: center;
 }
 
+.login-form {
+  width: 100%;
+  max-width: 330px;
+  padding:15px;
+  margin: auto; 
+  height: 100%;
+}
+
+.login-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .jobformopen {
   float: right;
   border: solid;
@@ -61,4 +75,6 @@
   to {
     transform: rotate(360deg);
   }
+
+  
 }
