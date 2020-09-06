@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { withRouter,Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import {Form,Button} from 'react-bootstrap'
 import '../App.css'
+import {Route} from 'react-router-dom';
 
 
-class Login extends Component {
+class Signup extends Component {
     
     state = {  
         username: '',
@@ -52,11 +53,6 @@ class Login extends Component {
         
     }
 
-    signUp = (event) => {
-        event.preventDefault();
-        this.props.history.push('/sign-up')
-    }
-
     
 
     
@@ -93,34 +89,8 @@ render() {
                     <input type='submit' value='Login' />
                     </Form> 
                <button onClick={this.signOut}>Log Out</button> */}
-                    <br/>
-                    <br/>
                     
-                    <Form className='login-form'>
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
-                            {/* <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                            </Form.Text> */}
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
-                        </Form.Group>
-                        <br/>
-                        <Button className='btn-lg btn-dark btn-block' variant="primary" type="submit">
-                            Login
-                        </Button>
-                        <br/>
-                        <div className='text-center'> Dont Have Account?
-                        <br/>
-                            <Link to='/signup'>Sign Up</Link>
-                        </div>
-                    </Form>
-
-                    {/* <h1>Create New User</h1>
+                    <h1>Create New User</h1>
                 <form onSubmit={(event) => this.handleNewUser(event)}>
                     <label>Username</label>
                     <br/>
@@ -171,7 +141,7 @@ render() {
                     <br/>
                     <br/>
                     <input type='submit' value='Login' />
-                    </form> */}
+                    </form> 
 
                     
 
@@ -180,7 +150,4 @@ render() {
     }
 }
  
-export default withRouter(Login);
-
-
-
+export default Signup;

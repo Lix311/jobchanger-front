@@ -5,6 +5,7 @@ import UserJobsContainer from './UserJobsContainer'
 import NavBar from '../Components/NavBar'
 import Login from '../Components/Login'
 import { Route, Switch } from 'react-router-dom';
+import Signup from '../Components/Signup'
 
 class MainContainer extends Component {
     render() {
@@ -46,6 +47,16 @@ class MainContainer extends Component {
                     exact path="/login"
                     render={()=>
                         <Login 
+                        login = {this.props.login}
+                        signup ={this.props.signup}
+                        />
+                    }
+                />
+
+                <Route
+                    exact path="/signup"
+                    render={()=>
+                        <Signup 
                         login = {this.props.login}
                         signup ={this.props.signup}
                         />

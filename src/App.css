@@ -8,12 +8,11 @@
   padding:15px;
   margin: auto; 
   height: 100%;
+  display: inline-block;
 }
 
 .login-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
 .jobformopen {
