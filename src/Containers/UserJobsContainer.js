@@ -10,11 +10,10 @@ class UserJobsContainer extends Component {
         return (  
 
             <div className='userjobstable'>
-                   {/* <StyledTable> */}
+                   
                    <Table striped bordered hover size="sm">
                         <thead>
                             <tr>
-                            <th>#</th>
                             <th>Company</th>
                             <th>Status</th>
                             <th>Contact</th>

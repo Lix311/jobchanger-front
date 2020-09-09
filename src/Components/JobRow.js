@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Table,Button} from 'react-bootstrap'
+import '../App.css'
 
 class JobRow extends Component {
     state = {  
@@ -50,7 +51,6 @@ class JobRow extends Component {
             // also have to persist to backend, update userjob in app.js when clicking save button  
             
             <tr>
-            <td>{this.props.job.job_id}</td>
             <td> {this.state.company}</td> 
             <td>{this.state.editing ? <input name='status'onChange={event => this.handleChange(event)} value={this.state.status}/> : this.state.status}</td>
             <td>{this.state.editing ? <input name='contact' onChange={event => this.handleChange(event)} value={this.state.contact}/> : this.state.contact}</td>

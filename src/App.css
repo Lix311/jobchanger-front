@@ -12,11 +12,13 @@
 }
 
 .login-div {
+  position: relative;
+  top: 50px;
   text-align: center;
 }
 
 .jobformopen {
-  float: right;
+  position: relative;
   border: solid;
   width: 400px;
   height: 100%;
@@ -36,10 +38,11 @@
 }
 
 .userjobstable {
-  display: flex;
+  /* display: flex;  */
   width: 100%;
   padding: 10px;
 }
+
 
 .App-logo {
   height: 40vmin;

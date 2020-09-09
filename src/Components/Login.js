@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter,Link } from "react-router-dom";
-import {Form,Button} from 'react-bootstrap'
+import {Form,Button,InputGroup,FormControl} from 'react-bootstrap'
 import '../App.css'
 
 
@@ -37,7 +37,6 @@ class Login extends Component {
 
 
     handleLogin = (event) => {
-       
         event.preventDefault();
         let {username,password} = event.target
         this.props.login(username.value, password.value)
@@ -92,14 +91,24 @@ render() {
                     <br/>
                     <input type='submit' value='Login' />
                     </Form> 
-               <button onClick={this.signOut}>Log Out</button> */}
+               <button onClick={this.signOut}>Log Out</button>
                     <br/>
-                    <br/>
+                    <br/> */}
                     
-                    <Form className='login-form'>
+                    <Form className='login-form' onSubmit={(event) => this.handleLogin(event)}>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <InputGroup>
+                                <FormControl
+                                    type='username' 
+                                    placeholder='Please enter your username' 
+                                    id='username' 
+                                    name='username'
+                                    value={this.state.username}
+                                    onChange={this.handleInput} />
+                                
+                            </InputGroup>
+                            {/* <Form.Control type="email" placeholder="Enter email" /> */}
                             {/* <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                             </Form.Text> */}
@@ -107,7 +116,17 @@ render() {
 
                         <Form.Group controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                            <InputGroup>
+                                <FormControl
+                                    type='password' 
+                                    placeholder='Please enter your password' 
+                                    id='password' 
+                                    name='password'
+                                    value={this.state.password}
+                                    onChange={this.handleInput} />
+                                
+                            </InputGroup>
+                            {/* <Form.Control type="password" placeholder="Password" /> */}
                         </Form.Group>
                         <br/>
                         <Button className='btn-lg btn-dark btn-block' variant="primary" type="submit">
