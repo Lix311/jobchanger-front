@@ -18,7 +18,7 @@
 }
 
 .jobformopen {
-  position: relative;
+  position: right;
   border: solid;
   width: 400px;
   height: 100%;
@@ -38,11 +38,14 @@
 }
 
 .userjobstable {
-  /* display: flex;  */
+  float: left;
   width: 100%;
-  padding: 10px;
+  padding: 100px;
 }
 
+.pagination {
+  text-align: center;
+}
 
 .App-logo {
   height: 40vmin;

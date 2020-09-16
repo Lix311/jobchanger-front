@@ -11,7 +11,8 @@ class App extends Component {
     jobs: [],
     userJobs: [],
     staticJobs: [],
-    userCurrentJobs: [] // pass this to userjobscontainer
+    userCurrentJobs: [], // pass this to userjobscontainer
+    startIndex: 0
   }
 
   componentDidMount(){
@@ -162,9 +163,7 @@ deleteJob = (job) => {
     .then(res => res.json())
     .then(data => { 
       this.setState({userJobs: data})
-      console.log(this.state.userJobs)
       const currentUserJobs = this.state.userJobs.filter(job => job.user_id === this.state.currentUser.id)
-      console.log(currentUserJobs)
       this.setState({userCurrentJobs: currentUserJobs}) 
     })
   }
@@ -212,7 +211,8 @@ body: JSON.stringify({
           addJob = {this.addJob}
           editJob = {this.editJob}
           deleteJob = {this.deleteJob}
-          userJobs ={this.state.userCurrentJobs}
+          userJobs ={this.state.userCurrentJobs.slice(this.state.startIndex, this.state.startIndex + 4)}
+          totalJobs = {this.state.userCurrentJobs}
         />
     </div>
     );
