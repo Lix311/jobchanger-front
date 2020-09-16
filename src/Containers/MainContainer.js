@@ -37,9 +37,11 @@ class MainContainer extends Component {
                         <UserJobsContainer 
                         totalJobs={this.props.totalJobs}
                         addJob={this.props.addJob}
-                        userJobs={this.props.userJobs}
+                        currentJobs={this.props.currentJobs}
                         editJob={this.props.editJob}
                         deleteJob={this.props.deleteJob}
+                        paginate={this.props.paginate}
+                        postsPerPage={this.props.postsPerPage}
                         />
                     }
                 />

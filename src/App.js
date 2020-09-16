@@ -12,7 +12,8 @@ class App extends Component {
     userJobs: [],
     staticJobs: [],
     userCurrentJobs: [], // pass this to userjobscontainer
-    startIndex: 0
+    currentPage: 1,
+    postsPerPage: 5
   }
 
   componentDidMount(){
@@ -200,8 +201,18 @@ body: JSON.stringify({
   }
 })
 } 
+
+paginate = (num) => {
+  this.setState({currentPage: num}) 
+} 
+// put this in app to change the slice values 
   
   render() { 
+    const {currentPage, postsPerPage, userCurrentJobs} = this.state;
+
+    const indexOfLastPost = currentPage * postsPerPage
+    const indexOfFirstPost = indexOfLastPost - postsPerPage
+    const currentPosts = userCurrentJobs.slice(indexOfFirstPost, indexOfLastPost)
     return (  
       <div className="App">
         <MainContainer 
@@ -211,8 +222,10 @@ body: JSON.stringify({
           addJob = {this.addJob}
           editJob = {this.editJob}
           deleteJob = {this.deleteJob}
-          userJobs ={this.state.userCurrentJobs.slice(this.state.startIndex, this.state.startIndex + 4)}
+          currentJobs ={currentPosts}
           totalJobs = {this.state.userCurrentJobs}
+          paginate = {this.paginate}
+          postsPerPage = {this.state.postsPerPage}
         />
     </div>
     );

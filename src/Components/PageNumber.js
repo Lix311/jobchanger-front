@@ -10,11 +10,11 @@ class PageNumber extends Component {
 
         const pageNumbers = [];
 
-        for (let i =1; i <= Math.ceil(totalPosts / postPerPage); i++){
+        for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++){
             pageNumbers.push(i)
         }
         
-
+        
         
     
     return (  
@@ -34,7 +34,7 @@ class PageNumber extends Component {
                     <a className='page-link' href='#'>Next</a>
                 </li>
             
-                    {console.log(pageNumbers)}
+                   
             </ul>
         </nav>
     );

@@ -8,13 +8,10 @@ import '../App.css'
 class UserJobsContainer extends Component {
     state = {  }
 
-    paginate = () => {
-        console.log('paginating...')
-    } 
-    // put this in app to change the slice values 
+    
     
     render() { 
-        let postPerPage = this.props.userJobs.length
+        
         let totalPosts = this.props.totalJobs.length 
         
         return (  
@@ -34,8 +31,8 @@ class UserJobsContainer extends Component {
                         <th>Next Step</th>
                         </tr>
                         </thead>
-                        {console.log('sortedjobs', this.props.userJobs)}
-                        {this.props.userJobs ? this.props.userJobs.sort((a,b) => a.id - b.id).map(job => 
+                       
+                        {this.props.currentJobs ? this.props.currentJobs.sort((a,b) => a.id - b.id).map(job => 
                                 <tbody>
                                 <JobRow key={job.id} job={job} editJob={this.props.editJob} deleteJob={this.props.deleteJob}/> 
                                 </tbody>
@@ -43,7 +40,7 @@ class UserJobsContainer extends Component {
                         
                     </Table>
                     {/* <AddJobForm addJob={this.props.addJob}/>  */}
-                    <PageNumber postPerPage={postPerPage} totalPosts={totalPosts} paginate={this.paginate}/>
+                    <PageNumber postPerPage={this.props.postsPerPage} totalPosts={totalPosts} paginate={this.props.paginate}/>
 
                     
             </div>
