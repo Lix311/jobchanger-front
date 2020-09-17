@@ -40,7 +40,13 @@ class UserJobsContainer extends Component {
                         
                     </Table>
                     {/* <AddJobForm addJob={this.props.addJob}/>  */}
-                    <PageNumber postPerPage={this.props.postsPerPage} totalPosts={totalPosts} paginate={this.props.paginate}/>
+                    <PageNumber 
+                        postPerPage={this.props.postsPerPage} 
+                        totalPosts={totalPosts} 
+                        paginate={this.props.paginate}
+                        prevPage = {this.props.prevPage}
+                        nextPage = {this.props.nextPage}
+                        />
 
                     
             </div>

@@ -205,6 +205,21 @@ body: JSON.stringify({
 paginate = (num) => {
   this.setState({currentPage: num}) 
 } 
+
+prevPage = () => {
+  if (this.state.currentPage >= 2){   
+    this.setState({currentPage: this.state.currentPage - 1})
+  }
+}
+
+nextPage = () => {
+  let numOfPages = this.state.userCurrentJobs.length / this.state.postsPerPage
+  
+  if (this.state.currentPage <= numOfPages){
+    this.setState({currentPage: this.state.currentPage + 1})
+  }
+  
+}
 // put this in app to change the slice values 
   
   render() { 
@@ -226,6 +241,8 @@ paginate = (num) => {
           totalJobs = {this.state.userCurrentJobs}
           paginate = {this.paginate}
           postsPerPage = {this.state.postsPerPage}
+          prevPage = {this.prevPage}
+          nextPage = {this.nextPage}
         />
     </div>
     );

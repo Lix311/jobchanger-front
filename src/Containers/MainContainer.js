@@ -42,6 +42,8 @@ class MainContainer extends Component {
                         deleteJob={this.props.deleteJob}
                         paginate={this.props.paginate}
                         postsPerPage={this.props.postsPerPage}
+                        prevPage = {this.props.prevPage}
+                        nextPage = {this.props.nextPage}
                         />
                     }
                 />
