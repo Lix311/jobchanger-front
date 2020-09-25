@@ -14,10 +14,7 @@ class PageNumber extends Component {
             pageNumbers.push(i)
         }
         
-        
-        
-
-    return (  
+        return (  
         <nav>
             
             <ul className='pagination justify-content-center'>

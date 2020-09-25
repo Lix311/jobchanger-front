@@ -4,6 +4,8 @@ import AddJobForm from '../Components/AddJobForm';
 import JobRow from '../Components/JobRow'
 import PageNumber from '../Components/PageNumber'
 import '../App.css'
+import TableBar from '../Components/TableBar'
+
 
 class UserJobsContainer extends Component {
     state = {  }
@@ -18,8 +20,9 @@ class UserJobsContainer extends Component {
 
             <div className='userjobstable'>
 
-                   
+                <TableBar/>  
                 <Table striped bordered hover size="sm">
+                    
                     <thead>
                         <tr>
                         <th>Company</th>
@@ -37,9 +40,9 @@ class UserJobsContainer extends Component {
                                 <JobRow key={job.id} job={job} editJob={this.props.editJob} deleteJob={this.props.deleteJob}/> 
                                 </tbody>
                             ) : ''}
-                        
+                     
                     </Table>
-                    {/* <AddJobForm addJob={this.props.addJob}/>  */}
+                     {/* <AddJobForm addJob={this.props.addJob}/>   */}
                     <PageNumber 
                         postPerPage={this.props.postsPerPage} 
                         totalPosts={totalPosts} 
