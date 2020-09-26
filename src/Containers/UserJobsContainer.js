@@ -20,7 +20,7 @@ class UserJobsContainer extends Component {
 
             <div className='userjobstable'>
 
-                <TableBar/>  
+                <TableBar addJob={this.props.addJob}/>  
                 <Table striped bordered hover size="sm">
                     
                     <thead>

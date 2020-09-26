@@ -31,7 +31,7 @@ class AddJobForm extends Component {
            {/* <div> */}
            <Modal
       {...this.props}
-      size="lg"
+      size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
@@ -42,14 +42,7 @@ class AddJobForm extends Component {
       </Modal.Header>
       <Modal.Body>
         <div className='container'>
-            To add Form Fields
-        </div>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={this.props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
-            {/* <br/>
+        <Form onSubmit={(event) => this.props.addJob(event)}>
            <Form.Group controlId="formGroupCompany">
               <Form.Label>Company</Form.Label>
               <Form.Control type="company" placeholder="Enter Company" />
@@ -79,8 +72,14 @@ class AddJobForm extends Component {
               <Form.Control as="textarea" rows="2" placeholder="Enter Contact Info"/>
             </Form.Group>
             <Button variant='primary' type='submit'>Submit</Button>
-            </div> 
-          </Form> */}
+          </Form> 
+        </div>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={this.props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+          
           {/* </StyledForm> */}
         </div>
     );

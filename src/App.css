@@ -27,7 +27,7 @@
   margin: 15px;
 }
 
-.jobformclosed {
+/* .jobformclosed {
   float: right;
   border: solid;
   width: 400px;
@@ -35,7 +35,7 @@
   padding: 50px;
   text-align: center;
   margin: 15px;
-}
+} */
 
 .userjobstable {
   float: left;

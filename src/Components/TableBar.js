@@ -42,7 +42,7 @@ class TableBar extends Component {
                     </Form>
                 </Navbar.Collapse>
             </Navbar>
-            <AddJobForm show={this.state.addModalShow} onHide={this.addModalClose}/>
+            <AddJobForm addJob={this.props.addJob} show={this.state.addModalShow} onHide={this.addModalClose}/>
             </div>
         );
     }
