@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Form, Button, Card} from 'react-bootstrap'
+import {Modal, Form, Button, Card} from 'react-bootstrap'
 import '../App.css'
 
 // make this have state to hold values?
@@ -20,15 +20,36 @@ class AddJobForm extends Component {
     return (  
       <div>
             {/* <StyledForm primary={this.state.formDisplay}> */}
+            {/* <Form className={this.state.formDisplay ? 'jobformopen'} onSubmit={(event) => this.props.addJob(event)}> */}
 
-            <Form className={this.state.formDisplay ? 'jobformopen' : 'jobformclosed'} onSubmit={(event) => this.props.addJob(event)}> 
+            {/* <Form>
             <h2>Add Custom Job</h2>
             <br/>
-            <Button onClick={this.toggleForm}>Add Job</Button>
-           { this.state.formDisplay ? 
+            <Button onClick={this.toggleForm}>Add Job</Button> */}
            
-           <div>
-            <br/>
+           
+           {/* <div> */}
+           <Modal
+      {...this.props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Add Job
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <div className='container'>
+            To add Form Fields
+        </div>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={this.props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+            {/* <br/>
            <Form.Group controlId="formGroupCompany">
               <Form.Label>Company</Form.Label>
               <Form.Control type="company" placeholder="Enter Company" />
@@ -58,8 +79,8 @@ class AddJobForm extends Component {
               <Form.Control as="textarea" rows="2" placeholder="Enter Contact Info"/>
             </Form.Group>
             <Button variant='primary' type='submit'>Submit</Button>
-            </div> : ''}
-          </Form>
+            </div> 
+          </Form> */}
           {/* </StyledForm> */}
         </div>
     );
