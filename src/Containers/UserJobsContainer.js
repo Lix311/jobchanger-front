@@ -15,7 +15,7 @@ class UserJobsContainer extends Component {
     render() { 
         
         let totalPosts = this.props.totalJobs.length 
-        let filtered = this.props.search != '' ? this.props.currentJobs.filter(job => job.company.toLowerCase().includes(this.props.search)) : this.props.currentJobs
+        
         return (  
 
             <div className='userjobstable'>
@@ -34,7 +34,8 @@ class UserJobsContainer extends Component {
                         <th>Next Step</th>
                         </tr>
                         </thead>
-                        {this.props.currentJobs ? filtered.sort((a,b) => a.id - b.id).map(job => 
+                       
+                        {this.props.currentJobs ? this.props.currentJobs.sort((a,b) => a.id - b.id).map(job => 
                                 <tbody>
                                 <JobRow key={job.id} job={job} editJob={this.props.editJob} deleteJob={this.props.deleteJob}/> 
                                 </tbody>

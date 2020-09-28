@@ -230,10 +230,10 @@ nextPage = () => {
   
   render() { 
     const {currentPage, postsPerPage, userCurrentJobs} = this.state;
-
+    let filtered = this.state.search != '' ? this.state.userCurrentJobs.filter(job => job.company.toLowerCase().includes(this.state.search)) : this.state.userCurrentJobs
     const indexOfLastPost = currentPage * postsPerPage
     const indexOfFirstPost = indexOfLastPost - postsPerPage
-    const currentPosts = userCurrentJobs.slice(indexOfFirstPost, indexOfLastPost)
+    const currentPosts = filtered.slice(indexOfFirstPost, indexOfLastPost) // change filtered back to usercurrent jobs
     return (  
       <div className="App">
         <MainContainer 
