@@ -13,7 +13,8 @@ class App extends Component {
     staticJobs: [],
     userCurrentJobs: [], // pass this to userjobscontainer
     currentPage: 1,
-    postsPerPage: 5
+    postsPerPage: 5,
+    search: ''
   }
 
   componentDidMount(){
@@ -23,6 +24,11 @@ class App extends Component {
     fetch('http://localhost:3001/static_jobs')
     .then(res => res.json())
     .then(data => this.setState({staticJobs: data}))
+  }
+
+  searchJob = (event) => {
+    this.setState({search: event.target.value})
+    console.log(this.state.search)
   }
 
   editJob = (state) => {
@@ -235,6 +241,7 @@ nextPage = () => {
           login = {this.loginHandler}
           signup = {this.signUpHandler}
           addJob = {this.addJob}
+          searchJob = {this.searchJob}
           editJob = {this.editJob}
           deleteJob = {this.deleteJob}
           currentJobs ={currentPosts}
@@ -243,6 +250,7 @@ nextPage = () => {
           postsPerPage = {this.state.postsPerPage}
           prevPage = {this.prevPage}
           nextPage = {this.nextPage}
+          search = {this.state.search}
         />
     </div>
     );

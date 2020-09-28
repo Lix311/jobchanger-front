@@ -20,7 +20,7 @@ class TableBar extends Component {
     render() { 
         return (  
             <div>
-           <Navbar bg="light" expand="lg">
+           <Navbar bg="dark" expand="lg">
                 <Navbar.Brand href="#home">My Jobs</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -37,7 +37,7 @@ class TableBar extends Component {
                     </NavDropdown> */}
                     </Nav>
                     <Form inline>
-                    <FormControl type="text" placeholder="Search Jobs" className="mr-sm-2" />
+                    <FormControl onChange={(event) => this.props.searchJob(event)} type="text" placeholder="Search Jobs" className="mr-sm-2" />
                     <Button variant="outline-primary">Search</Button>
                     </Form>
                 </Navbar.Collapse>

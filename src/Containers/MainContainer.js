@@ -44,6 +44,8 @@ class MainContainer extends Component {
                         postsPerPage={this.props.postsPerPage}
                         prevPage = {this.props.prevPage}
                         nextPage = {this.props.nextPage}
+                        searchJob={this.props.searchJob}
+                        search = {this.props.search}
                         />
                     }
                 />
