@@ -15,6 +15,12 @@ class AddJobForm extends Component {
     console.log('click')
 
 }
+
+clickSubmit = (event, onHide) => {
+  {/* <Form onSubmit={(event) => this.props.addJob(event)}> */}
+  this.props.addJob(event);
+  onHide();
+}
   
   render() { 
     return (  
@@ -42,7 +48,8 @@ class AddJobForm extends Component {
       </Modal.Header>
       <Modal.Body>
         <div className='container'>
-        <Form onSubmit={(event) => this.props.addJob(event)}>
+        {/* <Form onSubmit={(event) => this.props.addJob(event)}> */}
+        <Form onSubmit={(event) => this.clickSubmit(event,this.props.onHide)}>
            <Form.Group controlId="formGroupCompany">
               <Form.Label>Company</Form.Label>
               <Form.Control type="company" placeholder="Enter Company" />
@@ -71,13 +78,16 @@ class AddJobForm extends Component {
               <Form.Label>Contact</Form.Label>
               <Form.Control as="textarea" rows="2" placeholder="Enter Contact Info"/>
             </Form.Group>
-            <Button variant='primary' type='submit'>Submit</Button>
+            <br/>
+            <div class='col text-center'>
+              <Button variant='primary' type='submit'>Submit</Button>
+            </div>
           </Form> 
         </div>
       </Modal.Body>
-      <Modal.Footer>
+      {/* <Modal.Footer>
         <Button onClick={this.props.onHide}>Close</Button>
-      </Modal.Footer>
+      </Modal.Footer> */}
     </Modal>
           
           {/* </StyledForm> */}
