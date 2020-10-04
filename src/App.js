@@ -237,7 +237,7 @@ nextPage = () => {
     return (  
       <div className="App">
         <MainContainer 
-          jobs = {this.state.jobs}
+          jobs = {this.state.jobs.slice(0,5)} // only first 5
           login = {this.loginHandler}
           signup = {this.signUpHandler}
           addJob = {this.addJob}
