@@ -40,7 +40,7 @@ class Login extends Component {
         event.preventDefault();
         let {username,password} = event.target
         this.props.login(username.value, password.value)
-
+        
         this.props.history.push('/tasks')
     }
 

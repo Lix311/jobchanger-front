@@ -31,8 +31,8 @@ class Signup extends Component {
         event.preventDefault();
         let {newusername,newpassword,newemail,newavatar} = event.target
         this.props.signup(newusername.value, newpassword.value, newemail.value, newavatar.value)
-
-        this.props.history.push('/tasks')
+        
+        this.props.history.push('/login')
 }
 
 
@@ -157,7 +157,7 @@ render() {
                             <InputGroup>
                                 <FormControl
                                     type='text' 
-                                    placeholder='Please enter your username' 
+                                    placeholder='Enter new username' 
                                     id='newusername' 
                                     name='newusername'
                                     value={this.state.newusername}
@@ -175,7 +175,7 @@ render() {
                             <InputGroup>
                                 <FormControl
                                     type='password' 
-                                    placeholder='Please enter your password' 
+                                    placeholder='Enter new password' 
                                     id='newpassword' 
                                     name='newpassword'
                                     value={this.state.newpassword}
@@ -190,7 +190,7 @@ render() {
                             <InputGroup>
                                 <FormControl
                                     type='email' 
-                                    placeholder='Enter Email' 
+                                    placeholder='Enter new email' 
                                     id='newemail' 
                                     name='newemail'
                                     value={this.state.newemail}
@@ -208,7 +208,7 @@ render() {
                             <InputGroup>
                                 <FormControl
                                     type='text' 
-                                    placeholder='Please enter your username' 
+                                    placeholder='Enter new profile picture' 
                                     id='newavatar' 
                                     name='newavatar'
                                     value={this.state.newavatar}
@@ -242,4 +242,5 @@ render() {
     }
 }
  
-export default Signup;
+// export default Signup;
+export default withRouter(Signup);
