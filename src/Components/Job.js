@@ -11,14 +11,21 @@ const Job = (props) => {
     return (  
         <div>
             <Card border="primary" style={{ width: '18rem' }}>
-    <Card.Header>{props.job.company}</Card.Header>
+    <Card.Header>
+    <img className='movie-img' src={props.job.logo} />
+    <Card.Link target='_blank' href={`${props.job.url}`}>{props.job.company}</Card.Link> 
+    {/* add url to backend */}
+    
+    </Card.Header>
+    
                 <Card.Body>
                 <Card.Title>{props.job.title}</Card.Title>
-                <img className='movie-img' src={props.job.logo} />
+               
                 <Card.Text>
                     {props.job.location}
                 </Card.Text>
                 </Card.Body>
+                <small></small>
             </Card>
         </div>
     );

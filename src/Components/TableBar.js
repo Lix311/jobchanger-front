@@ -22,8 +22,8 @@ class TableBar extends Component {
             <div>
            <Navbar bg="dark" expand="lg">
                 <Navbar.Brand href="#home">My Jobs</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
+                {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav"> */}
                     <Nav className="mr-auto">
                     <Button onClick={this.formPopUp} variant="primary">➕</Button>
                     {/* <Nav.Link href="#home">Home</Nav.Link>
@@ -40,7 +40,7 @@ class TableBar extends Component {
                     <FormControl onChange={(event) => this.props.searchJob(event)} type="text" placeholder="Search Jobs" className="mr-sm-2" />
                     <Button variant="outline-primary">Search</Button>
                     </Form>
-                </Navbar.Collapse>
+                {/* </Navbar.Collapse> */}
             </Navbar>
             <AddJobForm addJob={this.props.addJob} show={this.state.addModalShow} onHide={this.addModalClose}/>
             </div>
