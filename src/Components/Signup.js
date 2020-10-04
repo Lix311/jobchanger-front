@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
-import {Form,Button} from 'react-bootstrap'
+import { withRouter,Link } from "react-router-dom";
+import {Form,Button,InputGroup,FormControl} from 'react-bootstrap'
 import '../App.css'
 import {Route} from 'react-router-dom';
 
@@ -90,7 +90,7 @@ render() {
                     </Form> 
                <button onClick={this.signOut}>Log Out</button> */}
                     
-                    <h1>Create New User</h1>
+                    {/* <h1>Create New User</h1>
                 <form onSubmit={(event) => this.handleNewUser(event)}>
                     <label>Username</label>
                     <br/>
@@ -141,7 +141,99 @@ render() {
                     <br/>
                     <br/>
                     <input type='submit' value='Login' />
-                    </form> 
+                    </form>  */}
+
+
+                    
+                    
+                    
+                    
+                    
+                    {/* new form starts here */}
+
+                    <Form className='login-form' onSubmit={(event) => this.handleNewUser(event)}>
+                        <Form.Group controlId="formBasicText">
+                            <Form.Label>Username</Form.Label>
+                            <InputGroup>
+                                <FormControl
+                                    type='text' 
+                                    placeholder='Please enter your username' 
+                                    id='newusername' 
+                                    name='newusername'
+                                    value={this.state.newusername}
+                                    onChange={this.handleInput} />
+                                
+                            </InputGroup>
+                            {/* <Form.Control type="email" placeholder="Enter email" /> */}
+                            {/* <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
+                            </Form.Text> */}
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <InputGroup>
+                                <FormControl
+                                    type='password' 
+                                    placeholder='Please enter your password' 
+                                    id='newpassword' 
+                                    name='newpassword'
+                                    value={this.state.newpassword}
+                                    onChange={this.handleInput} />
+                                
+                            </InputGroup>
+                            {/* <Form.Control type="password" placeholder="Password" /> */}
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicEmail">
+                            <Form.Label>Email</Form.Label>
+                            <InputGroup>
+                                <FormControl
+                                    type='email' 
+                                    placeholder='Enter Email' 
+                                    id='newemail' 
+                                    name='newemail'
+                                    value={this.state.newemail}
+                                    onChange={this.handleInput} />
+                                
+                            </InputGroup>
+                            {/* <Form.Control type="email" placeholder="Enter email" /> */}
+                            {/* <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
+                            </Form.Text> */}
+                        </Form.Group>
+
+                        <Form.Group controlId="formBasicText">
+                            <Form.Label>Avatar</Form.Label>
+                            <InputGroup>
+                                <FormControl
+                                    type='text' 
+                                    placeholder='Please enter your username' 
+                                    id='newavatar' 
+                                    name='newavatar'
+                                    value={this.state.newavatar}
+                                    onChange={this.handleInput} />
+                                
+                            </InputGroup>
+                            {/* <Form.Control type="email" placeholder="Enter email" /> */}
+                            {/* <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
+                            </Form.Text> */}
+                        </Form.Group>
+
+                        <Form.Group>
+                            <Form.File id="exampleFormControlFile1" label="Profile Picture" />
+                        </Form.Group>
+                        <br/>
+                        <Button className='btn-lg btn-dark btn-block' variant="primary" type="submit">
+                            Signup
+                        </Button>
+                        <br/>
+                        {/* <div className='text-center'> Dont Have Account?
+                        <br/>
+                            <Link to='/signup'>Sign Up</Link>
+                        </div> */}
+                    </Form>
 
                     
 

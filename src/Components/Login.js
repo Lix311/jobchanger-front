@@ -96,8 +96,8 @@ render() {
                     <br/> */}
                     
                     <Form className='login-form' onSubmit={(event) => this.handleLogin(event)}>
-                        <Form.Group controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
+                        <Form.Group controlId="formBasicText">
+                            <Form.Label>Username</Form.Label>
                             <InputGroup>
                                 <FormControl
                                     type='username' 
