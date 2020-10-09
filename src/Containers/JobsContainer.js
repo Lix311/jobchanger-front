@@ -1,5 +1,6 @@
 import React from 'react';
 import Job from '../Components/Job'
+import JobDetails from '../Components/JobDetails'
 
 const JobsContainer = (props) => {
     return (  
@@ -11,6 +12,8 @@ const JobsContainer = (props) => {
                     key={job.id}
                 />
             )}
+            <JobDetails show={this.state.addModalShow} onHide={this.addModalClose}/> 
+                {/* change to smart component */}
         </div>
     );
 }

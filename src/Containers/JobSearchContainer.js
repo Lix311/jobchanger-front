@@ -1,7 +1,6 @@
 import React from 'react';
 import JobsContainer from './JobsContainer'
 
-
 const JobSearchContainer = (props) => {
     return (  
         <div>
@@ -11,6 +10,7 @@ const JobSearchContainer = (props) => {
             jobs = {props.jobs}
             addJob = {props.addJob}
            />
+           
            
         </div>
     );
