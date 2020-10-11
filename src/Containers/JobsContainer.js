@@ -5,7 +5,8 @@ import JobDetails from '../Components/JobDetails'
 
 class JobsContainer extends Component {
     state = {  
-        addModalShow: true
+        addModalShow: true,
+        currentDetails: ''
     }
     
     formPopUp = () =>{
@@ -14,6 +15,10 @@ class JobsContainer extends Component {
 
     addModalClose = () => {
         this.setState({addModalShow: false})
+    }
+
+    changeDetailsHandler = (job) => {
+        this.setState({currentDetails: job})
     }
     // show={show} onHide={onHide} animation={false}
     render() { 
@@ -26,10 +31,11 @@ class JobsContainer extends Component {
                     <Job 
                         job={job}
                         key={job.id}
+                        change={this.changeDetailsHandler} //link will send that job as current Details and pass that job to job details
                     />
                 )}
                 </div>
-                <JobDetails show={this.state.addModalShow} onHide={this.addModalClose}/> 
+                <JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow} onHide={this.addModalClose}/> 
             </div>
         );
     }

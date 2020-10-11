@@ -14,7 +14,7 @@ class JobDetails extends Component {
         return (  
             
       <div class='jobdetails'>
-           
+           {console.log(this.props.currentDetails.company)}
            {/* <Modal show={this.props.show} onHide={this.props.onHide} animation={false}> */}
            <Modal.Dialog>
   <Modal.Header closeButton>
