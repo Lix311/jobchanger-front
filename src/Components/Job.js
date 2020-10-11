@@ -9,7 +9,7 @@ const Job = (props) => {
     let firstparagraph = paragraphs[0];
     
     return (  
-        <div>
+        <div className='job'>
             <Card border="primary" style={{ width: '18rem' }}>
     <Card.Header>
     <img className='movie-img' src={props.job.logo} />

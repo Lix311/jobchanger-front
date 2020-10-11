@@ -24,6 +24,22 @@
   text-align: center;
 }
 
+
+.jobpage {
+  display: flex;
+}
+
+.jobs {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.jobdetails {
+  width: 500px;
+  height: 100%;
+}
+
 .jobformopen {
   position: right;
   border: solid;
