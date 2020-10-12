@@ -35,7 +35,10 @@
   width: 35%;
 }
 
-.jobdetails {
+
+.jobdetails .modal-header {
+  display: flex;
+  flex-direction: column;
   width: 500px;
   height: 100%;
 }

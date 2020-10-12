@@ -11,14 +11,14 @@ const Job = (props) => {
     return (  
         <div className='job'>
             <Card border="primary" style={{ width: '18rem' }}>
-    {/* <Card.Header> */}
+    <Card.Header>
     <img className='movie-img' src={props.job.logo} />
     <Card.Link href='#' onClick={() => props.change(props.job)}>{props.job.title}</Card.Link> 
     
 
     {/* add url to backend */}
     
-    {/* </Card.Header> */}
+    </Card.Header>
     
                 <Card.Body>
                 <Card.Title><small>{props.job.company}</small></Card.Title>
