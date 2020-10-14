@@ -15,7 +15,7 @@ class UserJobsContainer extends Component {
     render() { 
         
         let totalPosts = this.props.totalJobs.length 
-        
+         
         return (  
 
             <div className='userjobstable'>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Job from '../Components/Job'
 import JobDetails from '../Components/JobDetails'
+import PageNumber from '../Components/PageNumber'
 
 
 class JobsContainer extends Component {
@@ -23,18 +24,29 @@ class JobsContainer extends Component {
     }
     // show={show} onHide={onHide} animation={false}
     render() { 
+        let totalGitJobs = this.props.totalGitJobs.length 
         return (  
             <div className='jobpage'>
                 
                 
                 <div className='jobs'>
-                {this.props.jobs.map(job => 
+                {this.props.currentGitJobs ? this.props.currentGitJobs.map(job => 
                     <Job 
                         job={job}
                         key={job.id}
                         change={this.changeDetailsHandler} //link will send that job as current Details and pass that job to job details
                     />
-                )}
+                ) : ''}
+
+                    
+                <PageNumber 
+                        
+                        postPerPage={this.props.postsPerPage} 
+                        totalPosts={totalGitJobs} 
+                        paginate={this.props.paginate}
+                        prevPage = {this.props.prevPage}
+                        nextPage = {this.props.nextPage}
+                        />
                 </div>
                 <JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow} onHide={this.addModalClose}/> 
             </div>

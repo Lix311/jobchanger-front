@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import JobSearchContainer from './JobSearchContainer'
+import JobsContainer from './JobsContainer'
 import TaskContainer from './TaskContainer'
 import UserJobsContainer from './UserJobsContainer'
 import NavBar from '../Components/NavBar'
@@ -9,6 +9,7 @@ import Signup from '../Components/Signup'
 
 class MainContainer extends Component {
     render() {
+        
     return (  
         <div>
             <NavBar />
@@ -17,8 +18,13 @@ class MainContainer extends Component {
                 
                     exact path="/jobsearch"
                     render={()=>
-                        <JobSearchContainer 
-                        jobs = {this.props.jobs}
+                        <JobsContainer
+                        totalGitJobs = {this.props.totalGitJobs}
+                        currentGitJobs = {this.props.currentGitJobs}
+                        postsPerPage={this.props.postsPerPage} 
+                        paginate={this.props.paginate}
+                        prevPage = {this.props.prevPage}
+                        nextPage = {this.props.nextPage}
                         
                         />
                     }

@@ -13,7 +13,7 @@ class App extends Component {
     staticJobs: [],
     userCurrentJobs: [], // pass this to userjobscontainer
     currentPage: 1,
-    postsPerPage: 5,
+    postsPerPage: 6,
     search: ''
   }
 
@@ -234,10 +234,12 @@ nextPage = () => {
     const indexOfLastPost = currentPage * postsPerPage
     const indexOfFirstPost = indexOfLastPost - postsPerPage
     const currentPosts = filtered.slice(indexOfFirstPost, indexOfLastPost) // change filtered back to usercurrent jobs
+    const currentGitJobs = this.state.jobs.slice(indexOfFirstPost, indexOfLastPost)
     return (  
       <div className="App">
         <MainContainer 
-          jobs = {this.state.jobs.slice(0,5)} // only first 5
+          totalGitJobs = {this.state.jobs}
+          currentGitJobs = {currentGitJobs} // only first 5
           login = {this.loginHandler}
           signup = {this.signUpHandler}
           addJob = {this.addJob}
