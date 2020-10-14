@@ -13,7 +13,7 @@ class App extends Component {
     staticJobs: [],
     userCurrentJobs: [], // pass this to userjobscontainer
     currentPage: 1,
-    postsPerPage: 6,
+    postsPerPage: 15,
     search: ''
   }
 
@@ -220,8 +220,9 @@ prevPage = () => {
 
 nextPage = () => {
   let numOfPages = this.state.userCurrentJobs.length / this.state.postsPerPage
+  let gitnumOfPages = this.state.jobs.length / this.state.postsPerPage
   
-  if (this.state.currentPage <= numOfPages){
+  if ((this.state.currentPage <= numOfPages) || (this.state.currentPage <= gitnumOfPages)){
     this.setState({currentPage: this.state.currentPage + 1})
   }
   

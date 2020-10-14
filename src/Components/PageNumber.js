@@ -6,7 +6,7 @@ import '../App.css'
 class PageNumber extends Component {
     // postPerPage={postPerPage} totalPosts={totalPosts} paginate={this.paginate}
     render(){
-         debugger 
+         
         const {postPerPage, totalPosts, paginate, prevPage, nextPage } = this.props
 
         const pageNumbers = [];

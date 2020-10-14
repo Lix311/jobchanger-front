@@ -29,15 +29,26 @@
   display: flex;
 }
 
+.job {
+  width: 250px;
+  
+}
+
+.onlyjobs {
+  margin: auto;
+  width: 60%;
+  padding-bottom: 10px;
+  
+}
+
 .jobs {
   padding-top: 25px;
   display: flex;
   flex-direction: column;
-  width: 35%;
 }
 
 .jobdetails {
-  padding: 15px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   width: 500px;

@@ -30,6 +30,7 @@ class JobsContainer extends Component {
                 
                 
                 <div className='jobs'>
+                <div className='onlyjobs'>
                 {this.props.currentGitJobs ? this.props.currentGitJobs.map(job => 
                     <Job 
                         job={job}
@@ -37,16 +38,16 @@ class JobsContainer extends Component {
                         change={this.changeDetailsHandler} //link will send that job as current Details and pass that job to job details
                     />
                 ) : ''}
-
-                    
-                <PageNumber 
-                        
-                        postPerPage={this.props.postsPerPage} 
-                        totalPosts={totalGitJobs} 
-                        paginate={this.props.paginate}
-                        prevPage = {this.props.prevPage}
-                        nextPage = {this.props.nextPage}
-                        />
+                </div>
+                
+                        <PageNumber
+                                postPerPage={this.props.postsPerPage} 
+                                totalPosts={totalGitJobs} 
+                                paginate={this.props.paginate}
+                                prevPage = {this.props.prevPage}
+                                nextPage = {this.props.nextPage}
+                                />
+                      
                 </div>
                 <JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow} onHide={this.addModalClose}/> 
             </div>
