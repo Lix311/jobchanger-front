@@ -48,8 +48,11 @@
 }
 
 .jobdetails {
-  padding: 10px;
-  display: flex;
+    position: sticky;
+    padding: 2em;
+    top: 7%;
+    bottom: 0%;
+   display: flex;
   flex-direction: column;
   width: 500px;
   height: 100%;
