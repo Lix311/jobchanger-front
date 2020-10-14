@@ -30,11 +30,19 @@
 }
 
 .jobs {
+  padding-top: 25px;
   display: flex;
   flex-direction: column;
   width: 35%;
 }
 
+.jobdetails {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 100%;
+}
 
 .jobdetails .modal-header {
   display: flex;

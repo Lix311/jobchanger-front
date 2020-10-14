@@ -5,7 +5,7 @@ const JobSearchContainer = (props) => {
     return (  
         <div>
             
-           <h2>JobSearchContainer</h2>
+           {/* <h2>JobSearchContainer</h2> */}
            <JobsContainer
             jobs = {props.jobs}
             addJob = {props.addJob}

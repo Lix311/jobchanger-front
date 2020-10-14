@@ -19,13 +19,13 @@ class JobDetails extends Component {
            {/* <Modal show={this.props.show} onHide={this.props.onHide} animation={false}> */}
            
            <Modal.Dialog>
-  <Modal.Header closeButton>
+  <Modal.Header>
+  {this.props.currentDetails.logo ? <img className='movie-img' src={this.props.currentDetails.logo}/> : ''}
       <Modal.Title>{this.props.currentDetails.title}</Modal.Title>
         <small>{this.props.currentDetails.company} </small>
         <small>{this.props.currentDetails.location} </small>
     </Modal.Header>
     
-  {this.extractContent}
   <Modal.Body style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
        <Markup content={this.props.currentDetails.description}/>
        

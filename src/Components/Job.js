@@ -10,7 +10,7 @@ const Job = (props) => {
     
     return (  
         <div className='job'>
-            <Card border="primary" style={{ width: '18rem' }}>
+            <Card border="primary" style={{ width: '18rem', float: 'right',margin:'5px' }}>
     <Card.Header>
     <img className='movie-img' src={props.job.logo} />
     <Card.Link href='#' onClick={() => props.change(props.job)}>{props.job.title}</Card.Link> 
