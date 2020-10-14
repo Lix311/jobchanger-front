@@ -49,8 +49,8 @@
 
 .jobdetails {
     position: sticky;
-    padding: 2em;
-    top: 7%;
+    padding: 2.5em;
+    top: 5%;
     bottom: 0%;
    display: flex;
   flex-direction: column;
