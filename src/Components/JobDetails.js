@@ -10,6 +10,7 @@ class JobDetails extends Component {
   }
 
 
+
     render() { 
     // if not true show static modal
         return (  

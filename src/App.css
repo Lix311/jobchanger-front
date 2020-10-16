@@ -34,6 +34,10 @@
   
 }
 
+.searchbar {
+  margin-top: 100px;
+}
+
 .onlyjobs {
   margin: auto;
   width: 60%;
@@ -42,7 +46,7 @@
 }
 
 .jobs {
-  padding-top: 25px;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
 }

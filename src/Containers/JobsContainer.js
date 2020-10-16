@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Job from '../Components/Job'
 import JobDetails from '../Components/JobDetails'
 import PageNumber from '../Components/PageNumber'
+import SearchBar from '../Components/SearchBar'
 
 
 class JobsContainer extends Component {
@@ -26,10 +27,12 @@ class JobsContainer extends Component {
     render() { 
         let totalGitJobs = this.props.totalGitJobs.length 
         return (  
+            
+            <div className='searchbar'>
+                <SearchBar/>
             <div className='jobpage'>
-                
-                
                 <div className='jobs'>
+                    
                 <div className='onlyjobs'>
                 {this.props.currentGitJobs ? this.props.currentGitJobs.map(job => 
                     <Job 
@@ -50,6 +53,7 @@ class JobsContainer extends Component {
                       
                 </div>
                 <JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow} onHide={this.addModalClose}/> 
+            </div>
             </div>
         );
     }
