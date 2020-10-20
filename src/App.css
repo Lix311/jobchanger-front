@@ -35,7 +35,7 @@
 }
 
 .searchbar {
-  margin-top: 110px;
+  margin-top: 75px;
 }
 
 /* .searchbar .input-group {
@@ -61,7 +61,7 @@
 .jobdetails {
     position: sticky;
     padding: 2.5em;
-    top: 5%;
+    top: 18%;
     bottom: 0%;
    display: flex;
   flex-direction: column;
@@ -74,6 +74,15 @@
   flex-direction: column;
   width: 500px;
   height: 100%;
+}
+
+.badges {
+  position: absolute;
+  margin-top: 200px;
+  right: 100px;  
+  width: 200px;
+  height: 130px;
+  
 }
 
 .jobformopen {

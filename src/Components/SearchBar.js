@@ -13,7 +13,7 @@ class SearchBar extends Component {
                 <input type="text" class="form-control" placeholder='Title' /> 
                 <input type="text" class="form-control" placeholder='Location' /> 
                 <span class="input-group-btn">
-                <Button variant="primary">Search</Button>
+                <Button variant="primary">Find Jobs</Button>
                 </span>
             </div>
         </div>
