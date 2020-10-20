@@ -1,35 +1,25 @@
 import React, { Component } from 'react';
-import {Nav, Navbar,NavDropdown,Form,FormControl,Button} from 'react-bootstrap'
-
+import {InputGroup,FormControl,Button} from 'react-bootstrap'
 
 class SearchBar extends Component {
     state = {  }
     render() { 
         return (  
-            <div>
-                <Navbar bg="dark" expand="lg">
-                <Navbar.Brand href="#home">My Jobs</Navbar.Brand>
-                {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav"> */}
-                    <Nav className="mr-auto">
-                    <Button onClick={this.formPopUp} variant="primary">➕</Button>
-                    {/* <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#link">Link</Nav.Link>
-                    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                    </NavDropdown> */}
-                    </Nav>
-                    <Form inline>
-                    <FormControl onChange={(event) => this.props.searchJob(event)} type="text" placeholder="Search Jobs" className="mr-sm-2" />
-                    <Button variant="outline-primary">Search</Button>
-                    </Form>
-                {/* </Navbar.Collapse> */}
-            </Navbar>
+            <div className='searchbar'>
+            <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder='Title' /> 
+                <input type="text" class="form-control" placeholder='Location' /> 
+                <span class="input-group-btn">
+                <Button variant="primary">Search</Button>
+                </span>
             </div>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+    </div>
         );
     }
 }

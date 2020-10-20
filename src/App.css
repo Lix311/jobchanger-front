@@ -35,8 +35,15 @@
 }
 
 .searchbar {
-  margin-top: 100px;
+  margin-top: 110px;
 }
+
+/* .searchbar .input-group {
+  width: 50%;
+  text-align: center;
+} */
+
+
 
 .onlyjobs {
   margin: auto;

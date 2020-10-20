@@ -28,7 +28,7 @@ class JobsContainer extends Component {
         let totalGitJobs = this.props.totalGitJobs.length 
         return (  
             
-            <div className='searchbar'>
+            <div>
                 <SearchBar/>
             <div className='jobpage'>
                 <div className='jobs'>
