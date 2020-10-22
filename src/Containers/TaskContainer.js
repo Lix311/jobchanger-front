@@ -1,11 +1,16 @@
 import React from 'react';
 import Tasks from '../Components/Tasks'
+import Badges from '../Components/Badges'
+import TaskJumbo from '../Components/TaskJumbo'
 
 const TaskContainer = () => {
     return (  
         <div>
-           <h2>TaskContainer</h2>
-           <Tasks/>
+           <Badges/>
+           <div className='taskjumbo'>
+           <TaskJumbo/>
+           </div>
+          
         </div>
     );
 }

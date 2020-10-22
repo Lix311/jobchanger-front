@@ -78,12 +78,27 @@
 
 .badges {
   position: absolute;
-  margin-top: 200px;
-  right: 100px;  
+  margin-top: 50px;
+  right: 10px;  
   width: 200px;
   height: 130px;
   
 }
+
+.tasks {
+  width: 300px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.jumbotron {
+  position: absolute;
+  margin-top: 150px;
+  width: 70%;
+  right: 275px;
+  padding: 10px;
+}
+
 
 .jobformopen {
   position: right;

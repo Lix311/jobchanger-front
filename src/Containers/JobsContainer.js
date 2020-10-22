@@ -3,7 +3,7 @@ import Job from '../Components/Job'
 import JobDetails from '../Components/JobDetails'
 import PageNumber from '../Components/PageNumber'
 import SearchBar from '../Components/SearchBar'
-import Badges from '../Components/Badges'
+
 
 
 class JobsContainer extends Component {
@@ -54,7 +54,6 @@ class JobsContainer extends Component {
                       
                 </div>
                 <JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow} onHide={this.addModalClose}/> 
-                <Badges/> 
             </div>
             </div>
         );
