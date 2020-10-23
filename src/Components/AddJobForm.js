@@ -7,6 +7,7 @@ import '../App.css'
 class AddJobForm extends Component {
   state = {  
     formDisplay: false
+    // if status is past interviewing let the interview dates pop up
   }
 
 
@@ -15,6 +16,7 @@ class AddJobForm extends Component {
     console.log('click')
 
 }
+
 
 clickSubmit = (event, onHide) => {
   {/* <Form onSubmit={(event) => this.props.addJob(event)}> */}
@@ -58,21 +60,34 @@ clickSubmit = (event, onHide) => {
               <Form.Label>Job Title</Form.Label>
               <Form.Control type="title" placeholder="Enter Job Title" />
             </Form.Group>
-            <Form.Group controlId="formGroupStatus">
-              <Form.Label>Status</Form.Label>
-              <Form.Control type="status" placeholder="Enter Status" />
+            <Form.Group controlId="exampleForm.ControlSelect1">
+            <Form.Label>Status</Form.Label>
+            <Form.Control as="select">
+              <option>Applied</option>
+              <option>Interviewing</option>
+              <option>Closed</option>
+            </Form.Control>
+          </Form.Group>
+          <Form.Group controlId="exampleForm.ControlSelect1">
+            <Form.Label>Next Step</Form.Label>
+            <Form.Control as="select">
+              <option>Waiting</option>
+              <option>Phone Screen</option>
+              <option>Cultural Interview</option>
+              <option>Tech Interview</option>
+            </Form.Control>
+          </Form.Group>
+            <Form.Group controlId="formGroupAction">
+              <Form.Label>Interview Date</Form.Label>
+              <Form.Control type="date" placeholder="Enter Current Action" />
             </Form.Group>
             <Form.Group controlId="formGroupAction">
-              <Form.Label>Action</Form.Label>
-              <Form.Control type="action" placeholder="Enter Current Action" />
+              <Form.Label>Interview Time</Form.Label>
+              <Form.Control type="time" placeholder="Enter Current Action" />
             </Form.Group>
             <Form.Group controlId="formGroupNotes">
               <Form.Label>Notes</Form.Label>
               <Form.Control as="textarea" rows="3" placeholder="Enter a Note" />
-            </Form.Group>
-            <Form.Group controlId="formGroupNextStep">
-              <Form.Label>Next Step</Form.Label>
-              <Form.Control as="textarea" rows="2" placeholder="Enter Next Step" />
             </Form.Group>
             <Form.Group controlId="formGroupContact">
               <Form.Label>Contact</Form.Label>

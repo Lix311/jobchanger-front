@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Table,Button} from 'react-bootstrap'
 import '../App.css'
+import {Form} from 'react-bootstrap'
 
 class JobRow extends Component {
     state = {  

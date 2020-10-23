@@ -26,12 +26,16 @@ class UserJobsContainer extends Component {
                     <thead>
                         <tr>
                         <th>Company</th>
-                        <th>Status</th>
-                        <th>Contact</th>
-                        <th>Action</th>
                         <th>Job Title</th>
-                        <th>Notes</th>
+                        <th>Status</th>
                         <th>Next Step</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Contact</th>
+                        <th>Notes</th>
+                        
+                       
+
                         </tr>
                         </thead>
                        

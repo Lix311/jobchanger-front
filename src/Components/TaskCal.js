@@ -8,8 +8,8 @@ const localizer = momentLocalizer(moment)
 let dates = () => {
     return {
         title:'alex interview',
-        start: new Date('October 17, 2020 03:24:00'),
-        end: new Date ('October 18, 2020 03:24:00')
+        start: new Date('October 17, 2020 20:00:00'),
+        end: new Date ('October 17, 2020 06:00:00')
     }
 }
 
@@ -23,8 +23,8 @@ class TaskCal extends Component {
             events={
                 [{
                     title:'alex interview',
-                    start: new Date('October 17, 2020 03:24:00'),
-                    end: new Date ('October 18, 2020 03:24:00')
+                    start: new Date('2020-10-17T21:45'),
+                    end: new Date ('2020-10-17T23:45')
                 }]}
             startAccessor="start"
             endAccessor="end"
