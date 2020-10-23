@@ -78,7 +78,6 @@
 
 .badges {
   position: absolute;
-  margin-top: 50px;
   right: 10px;  
   width: 200px;
   height: 130px;
@@ -92,7 +91,10 @@
 }
 
 .wierdcal {
-  margin-top: 200px;
+  margin-top: 65px;
+  margin-left: 50px;
+  height: 50vh;
+  width: 75%;
 }
 
 .jumbotron {

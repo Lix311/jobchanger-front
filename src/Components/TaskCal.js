@@ -17,7 +17,7 @@ class TaskCal extends Component {
     state = {  }
     render() { 
         return (  
-            <div style={{height: '100vh', margin: '10px'}}>
+            <div className='wierdcal'>
             <Calendar
             localizer={localizer}
             events={
