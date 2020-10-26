@@ -9,10 +9,11 @@ class JobRow extends Component {
         company: '', //make this
         status: '',
         contact: '',
-        action: '',
         title: '',
         notes: '',
         next_step: '',
+        job_date: '',
+        job_time: '',
         editing: false // toggle this with button to make input tag appear
     }
 
@@ -25,6 +26,8 @@ class JobRow extends Component {
         this.setState({title: this.props.job.title})
         this.setState({notes: this.props.job.notes})
         this.setState({next_step: this.props.job.next_step})
+        this.setState({job_date: this.props.job.job_date})
+        this.setState({job_time: this.props.job.job_time})
       }
     
     editHandler = () => {
@@ -53,12 +56,13 @@ class JobRow extends Component {
             
             <tr>
             <td> {this.state.company}</td> 
-            <td>{this.state.editing ? <input name='status'onChange={event => this.handleChange(event)} value={this.state.status}/> : this.state.status}</td>
-            <td>{this.state.editing ? <input name='contact' onChange={event => this.handleChange(event)} value={this.state.contact}/> : this.state.contact}</td>
-            <td>{this.state.editing ? <input name='action' onChange={event => this.handleChange(event)} value={this.state.action}/> : this.state.action}</td>
             <td>{this.state.title}</td>
-            <td>{this.state.editing ? <input name='notes' onChange={event => this.handleChange(event)} value={this.state.notes}/> : this.state.notes}</td>
+            <td>{this.state.editing ? <input name='status'onChange={event => this.handleChange(event)} value={this.state.status}/> : this.state.status}</td>
             <td>{this.state.editing ? <input name='next_step' onChange={event => this.handleChange(event)} value={this.state.next_step}/> : this.state.next_step}</td>
+            <td>{this.state.editing ? <input name='job_date' onChange={event => this.handleChange(event)} value={this.state.job_date}/> : this.state.job_date}</td>
+            <td>{this.state.editing ? <input name='job_time' onChange={event => this.handleChange(event)} value={this.state.job_time}/> : this.state.job_time}</td>
+            <td>{this.state.editing ? <input name='contact' onChange={event => this.handleChange(event)} value={this.state.contact}/> : this.state.contact}</td>
+            <td>{this.state.editing ? <input name='notes' onChange={event => this.handleChange(event)} value={this.state.notes}/> : this.state.notes}</td>
             <td>{this.state.editing ? <Button onClick={this.saveHandler} variant="success">Save</Button> : <Button onClick={this.editHandler} variant="warning">✏️</Button>}</td>
             <td><Button onClick={(event) => this.props.deleteJob(this.props.job)} variant="dark">🗑️</Button></td>
             </tr>

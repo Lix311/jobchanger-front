@@ -46,7 +46,9 @@ class App extends Component {
       contact: state.contact,
       action: state.action,
       notes: state.notes,
-      next_step: state.next_step
+      next_step: state.next_step,
+      job_time: state.job_time,
+      job_date: state.job_date
       })
     })
     .then(res => res.json())
@@ -60,6 +62,9 @@ class App extends Component {
       updatedJobs[index].action = state.action
       updatedJobs[index].notes = state.notes
       updatedJobs[index].next_step = state.next_step
+      updatedJobs[index].job_time = state.job_time
+      updatedJobs[index].job_date = state.job_date 
+
       
       this.setState({userCurrentJobs: updatedJobs})
 
@@ -85,16 +90,20 @@ deleteJob = (job) => {
 
   addJob = (event) => {
     event.preventDefault()
+
     let newJob = {
       user_id: this.state.currentUser.id,
       job_id: this.state.staticJobs.length + 1, 
       company: event.target['formGroupCompany'].value,
       title: event.target['formGroupTitle'].value,
       status: event.target['formGroupStatus'].value,
-      action: event.target['formGroupAction'].value,
-      notes: event.target['formGroupNotes'].value,
-      next_step: event.target['formGroupNextStep'].value, // this goes to userjobs
-      contact: event.target['formGroupContact'].value
+      next_step: event.target['formGroupNextStep'].value,
+      job_date: event.target['formGroupDate'].value,
+      job_time: event.target['formGroupTime'].value,
+      contact: event.target['formGroupContact'].value,
+      notes: event.target['formGroupNotes'].value
+      
+      
     } 
 
     let staticnewJob = {

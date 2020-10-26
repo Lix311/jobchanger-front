@@ -60,7 +60,7 @@ clickSubmit = (event, onHide) => {
               <Form.Label>Job Title</Form.Label>
               <Form.Control type="title" placeholder="Enter Job Title" />
             </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect1">
+            <Form.Group controlId="formGroupStatus">
             <Form.Label>Status</Form.Label>
             <Form.Control as="select">
               <option>Applied</option>
@@ -68,7 +68,7 @@ clickSubmit = (event, onHide) => {
               <option>Closed</option>
             </Form.Control>
           </Form.Group>
-          <Form.Group controlId="exampleForm.ControlSelect1">
+          <Form.Group controlId="formGroupNextStep">
             <Form.Label>Next Step</Form.Label>
             <Form.Control as="select">
               <option>Waiting</option>
@@ -77,11 +77,11 @@ clickSubmit = (event, onHide) => {
               <option>Tech Interview</option>
             </Form.Control>
           </Form.Group>
-            <Form.Group controlId="formGroupAction">
+            <Form.Group controlId="formGroupDate">
               <Form.Label>Interview Date</Form.Label>
               <Form.Control type="date" placeholder="Enter Current Action" />
             </Form.Group>
-            <Form.Group controlId="formGroupAction">
+            <Form.Group controlId="formGroupTime">
               <Form.Label>Interview Time</Form.Label>
               <Form.Control type="time" placeholder="Enter Current Action" />
             </Form.Group>
