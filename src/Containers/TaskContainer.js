@@ -4,12 +4,14 @@ import Badges from '../Components/Badges'
 import TaskJumbo from '../Components/TaskJumbo'
 import TaskCal from '../Components/TaskCal'
 
-const TaskContainer = () => {
+const TaskContainer = (props) => {
     return (  
         <div>
            <Badges/>
           
-            <TaskCal/>
+            <TaskCal
+                currentJobs={props.currentJobs}
+            />
           {/* <div className='taskjumbo'>
             <TaskJumbo/>
            </div> */}
