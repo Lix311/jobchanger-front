@@ -17,6 +17,7 @@ class App extends Component {
     search: ''
   }
 
+
   componentDidMount(){
     fetch('http://localhost:3001/jobs')
     .then(res => res.json())
@@ -90,7 +91,6 @@ deleteJob = (job) => {
 
   addJob = (event) => {
     event.preventDefault()
-
     let newJob = {
       user_id: this.state.currentUser.id,
       job_id: this.state.staticJobs.length + 1, 
@@ -103,7 +103,8 @@ deleteJob = (job) => {
       contact: event.target['formGroupContact'].value,
       notes: event.target['formGroupNotes'].value
       
-      
+      // 2000-01-01T21:32:00.000Z
+  
     } 
 
     let staticnewJob = {
