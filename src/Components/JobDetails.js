@@ -16,6 +16,7 @@ class JobDetails extends Component {
         return (  
             
       <div class='jobdetails'>
+
            {console.log(this.props.currentDetails)}
            {/* <Modal show={this.props.show} onHide={this.props.onHide} animation={false}> */}
            
@@ -28,13 +29,12 @@ class JobDetails extends Component {
     </Modal.Header>
     
   <Modal.Body style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
-       <Markup content={this.props.currentDetails.description}/>
+       {this.props.currentDetails ? <Markup content={this.props.currentDetails.description}/> : 
+       <Markup content='Hello Jobseeker <br/> Choose a job to the right to get started.'/> }
        
   </Modal.Body>
 
   <Modal.Footer>
-    <Button variant="secondary">Close</Button>
-    <Button variant="primary">Save changes</Button>
   </Modal.Footer>
 </Modal.Dialog>
 

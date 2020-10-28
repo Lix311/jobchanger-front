@@ -28,6 +28,8 @@ class JobRow extends Component {
         this.setState({next_step: this.props.job.next_step})
         this.setState({job_date: this.props.job.job_date})
         this.setState({job_time: this.props.job.job_time})
+        
+        // update times here for DISPLAY, change long times into 23:30 eventually
       }
     
     editHandler = () => {

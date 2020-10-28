@@ -1,13 +1,15 @@
 import React from 'react';
 import Tasks from '../Components/Tasks'
 import Badges from '../Components/Badges'
-import TaskJumbo from '../Components/TaskJumbo'
+import TaskJumbo from '../Components/Jumbo'
 import TaskCal from '../Components/TaskCal'
 
 const TaskContainer = (props) => {
     return (  
         <div>
-           <Badges/>
+           {/* <Badges
+                currentJobs={props.currentJobs}
+           /> */}
           
             <TaskCal
                 currentJobs={props.currentJobs}

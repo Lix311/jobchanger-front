@@ -3,12 +3,12 @@ import Job from '../Components/Job'
 import JobDetails from '../Components/JobDetails'
 import PageNumber from '../Components/PageNumber'
 import SearchBar from '../Components/SearchBar'
-
+import Jumbo from '../Components/Jumbo'
 
 
 class JobsContainer extends Component {
     state = {  
-        addModalShow: true,
+        addModalShow: false,
         currentDetails: ''
     }
     
@@ -53,7 +53,7 @@ class JobsContainer extends Component {
                                 />
                       
                 </div>
-                <JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow} onHide={this.addModalClose}/> 
+                {<JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow} onHide={this.addModalClose}/>}
             </div>
             </div>
         );
