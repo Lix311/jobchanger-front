@@ -21,7 +21,7 @@ class JobDetails extends Component {
            {/* <Modal show={this.props.show} onHide={this.props.onHide} animation={false}> */}
            
            <Modal.Dialog>
-  <Modal.Header>
+  <Modal.Header style= {this.props.currentDetails ? {'background-color': ''} : {'background-color': 'skyblue'}}>
   {this.props.currentDetails.logo ? <img className='movie-img' src={this.props.currentDetails.logo}/> : ''}
       <Modal.Title>{this.props.currentDetails.title}</Modal.Title>
         <small>{this.props.currentDetails.company} </small>
@@ -30,11 +30,11 @@ class JobDetails extends Component {
     
   <Modal.Body style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
        {this.props.currentDetails ? <Markup content={this.props.currentDetails.description}/> : 
-       <Markup content='Hello Jobseeker <br/> Choose a job to the right to get started.'/> }
+       <Markup content="It's not so much the destination as it is the journey. <br/> - Captain Jack Sparrow"/> }
        
   </Modal.Body>
 
-  <Modal.Footer>
+  <Modal.Footer style={this.props.currentDetails ? {'background-color': ''} : {'background-color': 'skyblue'}}>
   </Modal.Footer>
 </Modal.Dialog>
 

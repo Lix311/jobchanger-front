@@ -30,7 +30,9 @@ class JobsContainer extends Component {
         return (  
             
             <div>
-                <SearchBar/>
+                <SearchBar 
+                    searchGit = {this.props.searchGit}
+                />
             <div className='jobpage'>
                 <div className='jobs'>
                     

@@ -38,7 +38,6 @@ class TableBar extends Component {
                     </Nav>
                     <Form inline>
                     <FormControl onChange={(event) => this.props.searchJob(event)} type="text" placeholder="Search Jobs" className="mr-sm-2" />
-                    <Button variant="outline-primary">Search</Button>
                     </Form>
                 {/* </Navbar.Collapse> */}
             </Navbar>

@@ -14,7 +14,8 @@ class App extends Component {
     userCurrentJobs: [], // pass this to userjobscontainer
     currentPage: 1,
     postsPerPage: 15,
-    search: ''
+    search: '',
+    searchGit: ''
   }
 
 
@@ -30,6 +31,10 @@ class App extends Component {
   searchJob = (event) => {
     this.setState({search: event.target.value})
     console.log(this.state.search)
+  }
+
+  searchGitJob = (searchterm) => {
+    console.log(searchterm) // finish up 
   }
 
   editJob = (state) => {
@@ -249,6 +254,7 @@ nextPage = () => {
     return (  
       <div className="App">
         <MainContainer 
+          searchGit = {this.searchGitJob}
           totalGitJobs = {this.state.jobs}
           currentGitJobs = {currentGitJobs} // only first 5
           login = {this.loginHandler}

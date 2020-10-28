@@ -25,6 +25,7 @@ class MainContainer extends Component {
                         paginate={this.props.paginate}
                         prevPage = {this.props.prevPage}
                         nextPage = {this.props.nextPage}
+                        searchGit = {this.props.searchGit}
                         
                         />
                     }
