@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   searchGitJob = (searchterm) => {
-    console.log(searchterm) // finish up 
+    this.setState({searchGit: searchterm})
   }
 
   editJob = (state) => {
@@ -159,7 +159,7 @@ deleteJob = (job) => {
   }
   
   loginHandler = (username,password) => {
-    console.log(username,password,'...logged in')
+    // console.log(username,password,'...logged in')
 
     fetch('http://localhost:3001/api/v1/login', {
       method: 'POST',
@@ -179,7 +179,7 @@ deleteJob = (job) => {
   if(data.errors){
     alert(data.errors)
   } else {
-    console.log(data)
+    // console.log(data)
     this.setState({currentUser: data})
     fetch('http://localhost:3001/userjobs')
     .then(res => res.json())
@@ -247,10 +247,11 @@ nextPage = () => {
   render() { 
     const {currentPage, postsPerPage, userCurrentJobs} = this.state;
     let filtered = this.state.search != '' ? this.state.userCurrentJobs.filter(job => job.company.toLowerCase().includes(this.state.search)) : this.state.userCurrentJobs
+    let gitfiltered = this.state.searchGit != '' ? this.state.jobs.filter(job => job.title.toLowerCase().includes(this.state.searchGit)) : this.state.jobs
     const indexOfLastPost = currentPage * postsPerPage
     const indexOfFirstPost = indexOfLastPost - postsPerPage
     const currentPosts = filtered.slice(indexOfFirstPost, indexOfLastPost) // change filtered back to usercurrent jobs
-    const currentGitJobs = this.state.jobs.slice(indexOfFirstPost, indexOfLastPost)
+    const currentGitJobs = gitfiltered.slice(indexOfFirstPost, indexOfLastPost)
     return (  
       <div className="App">
         <MainContainer 

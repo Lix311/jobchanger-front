@@ -17,7 +17,7 @@ class JobDetails extends Component {
             
       <div class='jobdetails'>
 
-           {console.log(this.props.currentDetails)}
+           
            {/* <Modal show={this.props.show} onHide={this.props.onHide} animation={false}> */}
            
            <Modal.Dialog>
