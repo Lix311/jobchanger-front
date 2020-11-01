@@ -21,7 +21,7 @@ class JobsContainer extends Component {
     }
 
     changeDetailsHandler = (job) => {
-        
+        debugger 
         this.setState({currentDetails: job})
     }
     // show={show} onHide={onHide} animation={false}
