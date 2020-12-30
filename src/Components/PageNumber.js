@@ -11,6 +11,7 @@ class PageNumber extends Component {
 
         const pageNumbers = [];
 
+
         for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++){
             pageNumbers.push(i)
         }
@@ -20,15 +21,15 @@ class PageNumber extends Component {
             
             <ul className='pagination justify-content-center'>
                 <li className='page-item'>
-                    <a onClick={() => prevPage()} className='page-link' href='#'>Previous</a>
+                    <a onClick={() => prevPage()} className='page-link' href='#'>⬅️</a>
                 </li>
-                {pageNumbers.map(num => (
+                {/* {pageNumbers.map(num => (
                     <li className='page-item' key={num}>
                          <a onClick={() => paginate(num)} href='#' className='page-link'>{num}</a>
                     </li>
-                ))}
+                ))} */}
                 <li className='page-item'>
-                    <a onClick={() => nextPage()} className='page-link' href='#'>Next</a>
+                    <a onClick={() => nextPage()} className='page-link' href='#'>➡️</a>
                 </li>
             
             </ul> 
