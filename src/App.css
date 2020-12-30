@@ -28,12 +28,47 @@
 
 .jobpage {
   display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
 }
 
-.job {
-  width: 250px;
-  
+.jobs {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.jobdetails {
+    position: sticky;
+    top: 40px;
+    bottom: 20px;
+    padding: 10px;
+    
+   display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 100%;
+}
+.jobdetails .modal-dialog {
+
+  bottom: 20px;
+  height: 500px;
+}
+
+.jobdetails .modal-header {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 125px;
+}
+.jobdetails .modal-body {
+  display: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 390px;
+}
+
 
 .searchbar {
   margin-top: 75px;
@@ -46,36 +81,14 @@
 
 
 
-.onlyjobs {
+/* .onlyjobs {
   margin: auto;
   width: 60%;
   padding-bottom: 10px;
   
-}
+} */
 
-.jobs {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: column;
-}
 
-.jobdetails {
-    position: sticky;
-    padding: 2.5em;
-    top: 18%;
-    bottom: 0%;
-   display: flex;
-  flex-direction: column;
-  width: 500px;
-  height: 100%;
-}
-
-.jobdetails .modal-header {
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  height: 100%;
-}
 
 .badges {
   position: absolute;
@@ -95,7 +108,10 @@
   margin-top: 100px;
   margin-left: 100px;
   height: 50vh;
-  width: 80%;
+  width: 75vh;
+}
+.rbc-toolbar-label{
+  color: #0000ff;
 }
 
 .jumbotron {

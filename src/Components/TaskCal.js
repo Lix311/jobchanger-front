@@ -40,6 +40,7 @@ class TaskCal extends Component {
                 events={this.state.events}
                 startAccessor="start"
                 endAccessor="end"
+                views={['month']}
             />
          </div>
         );

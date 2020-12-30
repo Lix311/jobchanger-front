@@ -13,7 +13,8 @@ const Job = (props) => {
             <Card border="primary" style={{ width: '18rem', float: 'right',margin:'5px' }}>
     <Card.Header>
     <img className='movie-img' src={props.job.logo} />
-    <Card.Link href='#' onClick={() => props.change(props.job)}>{props.job.title}</Card.Link> 
+    <Card.Link href='#' onClick={(event) => props.change(props.job,event)}>{props.job.title}</Card.Link> 
+    {/* change from props.job to event */}
     
 
     {/* add url to backend */}

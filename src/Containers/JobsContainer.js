@@ -20,9 +20,10 @@ class JobsContainer extends Component {
         this.setState({addModalShow: false})
     }
 
-    changeDetailsHandler = (job) => {
-        debugger 
+    changeDetailsHandler = (job,event) => {
+        event.preventDefault();
         this.setState({currentDetails: job})
+        // DONT RESET ON CLICKKKKKK
     }
     // show={show} onHide={onHide} animation={false}
     render() { 
@@ -33,30 +34,28 @@ class JobsContainer extends Component {
                 <SearchBar 
                     searchGit = {this.props.searchGit}
                 />
-            <div className='jobpage'>
-                <div className='jobs'>
-                    
-                <div className='onlyjobs'>
-                {this.props.currentGitJobs ? this.props.currentGitJobs.map(job => 
-                    <Job 
-                        job={job}
-                        key={job.id}
-                        change={this.changeDetailsHandler} //link will send that job as current Details and pass that job to job details
-                    />
-                ) : ''}
-                </div>
-                
-                        <PageNumber
-                                postPerPage={this.props.postsPerPage} 
-                                totalPosts={totalGitJobs} 
-                                paginate={this.props.paginate}
-                                prevPage = {this.props.prevPage}
-                                nextPage = {this.props.nextPage}
+                <div className='jobpage'>
+                    <div className='jobs'>
+                       
+                            {this.props.currentGitJobs ? this.props.currentGitJobs.map(job => 
+                                <Job 
+                                    job={job}
+                                    key={job.id}
+                                    change={this.changeDetailsHandler} //link will send that job as current Details and pass that job to job details
                                 />
-                      
+                            ) : ''}
+                        
+                            <br/>
+                            <PageNumber
+                                    postPerPage={this.props.postsPerPage} 
+                                    totalPosts={totalGitJobs} 
+                                    paginate={this.props.paginate}
+                                    prevPage = {this.props.prevPage}
+                                    nextPage = {this.props.nextPage}
+                                    />
+                    </div>
+                    {<JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow} onHide={this.addModalClose}/>}
                 </div>
-                {<JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow} onHide={this.addModalClose}/>}
-            </div>
             </div>
         );
     }
