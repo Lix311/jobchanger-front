@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  font-family: 'PT Serif', serif;
+
+
 }
 
 .movie-img{
@@ -120,9 +123,14 @@
   height: 50vh;
   width: 75vh;
 }
-.rbc-toolbar-label{
-  color: #0000ff;
+ .rbc-toolbar{
+  color: #0275d8;
 }
+.rbc-calendar{
+  border:solid;
+  border-color: #f7f7f7;
+  padding:10px;
+} 
 
 .jumbotron {
   position: absolute;

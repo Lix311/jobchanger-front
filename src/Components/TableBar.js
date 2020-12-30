@@ -20,12 +20,12 @@ class TableBar extends Component {
     render() { 
         return (  
             <div>
-           <Navbar bg="dark" expand="lg">
+           <Navbar bg="light" expand="lg">
                 <Navbar.Brand href="#home">My Jobs</Navbar.Brand>
                 {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav"> */}
                     <Nav className="mr-auto">
-                    <Button onClick={this.formPopUp} variant="primary">➕</Button>
+                    <Button onClick={this.formPopUp} variant="primary">Add job</Button>
                     {/* <Nav.Link href="#home">Home</Nav.Link>
                     <Nav.Link href="#link">Link</Nav.Link>
                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
