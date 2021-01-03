@@ -21,7 +21,7 @@ class PageNumber extends Component {
             
             <ul className='pagination justify-content-center'>
                 <li className='page-item'>
-                    <a onClick={() => prevPage()} className='page-link' href='#'>⬅️</a>
+                    <a onClick={() => prevPage()} className='page-link' href='#'>Back</a>
                 </li>
                 {/* {pageNumbers.map(num => (
                     <li className='page-item' key={num}>
@@ -29,7 +29,7 @@ class PageNumber extends Component {
                     </li>
                 ))} */}
                 <li className='page-item'>
-                    <a onClick={() => nextPage()} className='page-link' href='#'>➡️</a>
+                    <a onClick={() => nextPage()} className='page-link' href='#'>Next</a>
                 </li>
             
             </ul> 

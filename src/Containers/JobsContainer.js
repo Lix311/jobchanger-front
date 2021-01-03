@@ -12,17 +12,16 @@ class JobsContainer extends Component {
         currentDetails: ''
     }
     
-    formPopUp = () =>{
+    fillInfo = () =>{
         this.setState({addModalShow : true})
     }
 
-    addModalClose = () => {
-        this.setState({addModalShow: false})
-    }
+    
 
     changeDetailsHandler = (job,event) => {
         event.preventDefault();
         this.setState({currentDetails: job})
+        this.setState({addModalShow: true})
         // DONT RESET ON CLICKKKKKK
     }
     // show={show} onHide={onHide} animation={false}
@@ -54,7 +53,7 @@ class JobsContainer extends Component {
                                     nextPage = {this.props.nextPage}
                                     />
                     </div>
-                    {<JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow} onHide={this.addModalClose}/>}
+                    {<JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow}/>}
                 </div>
             </div>
         );

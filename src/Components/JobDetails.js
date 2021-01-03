@@ -15,13 +15,14 @@ class JobDetails extends Component {
     // if not true show static modal
         return (  
             
-      <div class='jobdetails'>
+          <div class='jobdetails'>
 
            
            {/* <Modal show={this.props.show} onHide={this.props.onHide} animation={false}> */}
            
-           <Modal.Dialog>
-  <Modal.Header style= {this.props.currentDetails ? {'background-color': ''} : {'background-color': 'skyblue'}}>
+        { this.props.show === false ? <h1>Sliding Modal</h1> : <Modal.Dialog>
+  <Modal.Header>
+  {console.log(this.props.show)}
   {this.props.currentDetails.logo ? <img className='movie-img' src={this.props.currentDetails.logo}/> : ''}
       <Modal.Title>{this.props.currentDetails.title}</Modal.Title>
         <small>{this.props.currentDetails.company} </small>
@@ -29,35 +30,13 @@ class JobDetails extends Component {
     </Modal.Header>
     
   <Modal.Body style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
-       {this.props.currentDetails ? <Markup content={this.props.currentDetails.description}/> : 
-       <Markup content="It's not so much the destination as it is the journey. <br/> - Captain Jack Sparrow"/> }
-       
+       {<Markup content={this.props.currentDetails.description}/>}
   </Modal.Body>
 
-  <Modal.Footer style={this.props.currentDetails ? {'background-color': ''} : {'background-color': 'skyblue'}}>
+  <Modal.Footer >
   </Modal.Footer>
-</Modal.Dialog>
-
-
-{/* Try this again if you can ask for help with custom Modal Header */}
-
-{/* <Card>
-  <Card.Header>
-      <h5>{this.props.currentDetails.title}</h5>
-        <small>{this.props.currentDetails.company} {'|'} {this.props.currentDetails.location}</small>
-       
-  </Card.Header>
-  <Card.Body>
-    <Card.Title>Special title treatment</Card.Title>
-    <Card.Text>
-      With supporting text below as a natural lead-in to additional content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card> */}
-          
-          {/* </StyledForm> */}
-        </div>
+</Modal.Dialog> }
+</div>
     );
   }
 }
