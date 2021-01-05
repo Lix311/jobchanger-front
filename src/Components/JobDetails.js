@@ -26,7 +26,7 @@ class JobDetails extends Component {
   <Carousel.Item>
     
     <img
-      className="car-image"
+      className="d-block w-100"
       src="https://images.pexels.com/photos/5408915/pexels-photo-5408915.jpeg?cs=srgb&dl=pexels-olya-kobruseva-5408915.jpg&fm=jpg"
       alt="First slide"
     />
@@ -50,7 +50,7 @@ class JobDetails extends Component {
 <Carousel.Caption>
       <div class="car-text">
         <h3>Organize</h3>
-        <p>Keep track of your job applications using the JobChanger Planner. Keep up-to-date on times, dates, and other valuble information.  </p>
+        <p>Add, Delete, and Edit jobs in the JobChanger Planner. Keep up-to-date on times, dates, and other valuable information.  </p>
       </div>
 
     </Carousel.Caption>
@@ -69,7 +69,7 @@ class JobDetails extends Component {
     <Carousel.Caption>
       <div class="car-text">
         <h3>Make a Change</h3>
-        <p>Start using JobChanger today and land the job you've always dreamed of.</p>
+        <p>Start your job search using JobChanger today and land the job you've always dreamed of.</p>
       </div>
 
     </Carousel.Caption>
