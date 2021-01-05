@@ -77,10 +77,21 @@ class JobDetails extends Component {
 </Carousel> : <Modal.Dialog>
   <Modal.Header>
   {console.log(this.props.show)}
+  <div className='logoandbtn'>
+  <Button onClick={this.formPopUp} variant="primary">Add to Planner</Button>
   {this.props.currentDetails.logo ? <img className='movie-img' src={this.props.currentDetails.logo}/> : ''}
+  </div>
       <Modal.Title>{this.props.currentDetails.title}</Modal.Title>
-        <small>{this.props.currentDetails.company} </small>
-        <small>{this.props.currentDetails.location} </small>
+      
+        <div class="job-stuff">
+          <small>{this.props.currentDetails.company} </small>
+          <span>•</span>
+          <small> {this.props.currentDetails.location}</small>
+          <br/>
+          
+  
+          
+      </div>
     </Modal.Header>
     
   <Modal.Body style={{'max-height': 'calc(100vh - 210px)', 'overflow-y': 'auto'}}>
