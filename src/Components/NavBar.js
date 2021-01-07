@@ -8,7 +8,7 @@ const StyledLinks = styled.div`
 line-height: 1em;
     display: flex;
     text-decoration: none;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 250px;
 
 `
@@ -23,8 +23,8 @@ const NavBar = (props) => {
             {/* <Nav className="mr-auto"> */}
             <StyledLinks>
               <Link to="/jobsearch">Jobs</Link>
-              <Link to="/tasks">Tasks</Link>
-              <Link to="/jobs">Organize</Link>
+              {/* <Link to="/tasks">Tasks</Link> */}
+              <Link to="/jobs">Planner</Link>
             </StyledLinks>
             {/* </Nav> */}
         </BootstrapNav>

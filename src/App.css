@@ -35,6 +35,14 @@
   justify-content: center;
 }
 
+.planpage{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
 .jobs {
   padding-top: 10px;
   display: flex;
@@ -154,10 +162,17 @@ height: 100%;
 }
 
 .wierdcal {
-  margin-top: 100px;
-  margin-left: 100px;
+  /* margin-top: 100px;
+  margin-left: 100px; */
+  margin-top: 50px;
   height: 50vh;
-  width: 75vh;
+  width: 50vh;
+  padding:15px;
+}
+
+.rbc-btn-group{
+  display:flex;
+  padding:5px;
 }
  .rbc-toolbar{
   color: #0275d8;
@@ -166,7 +181,10 @@ height: 100%;
   border:solid;
   border-color: #f7f7f7;
   padding:10px;
+  
 } 
+
+
 
 .jumbotron {
   position: absolute;
@@ -199,9 +217,13 @@ height: 100%;
 } */
 
 .userjobstable {
+  display: flex;
+  flex-direction: column;
   float: left;
-  width: 100%;
-  padding: 100px;
+  height:100%;
+  width: 90%;
+  padding: 20px;
+  margin-top:50px;
 }
 
 .pagination {
