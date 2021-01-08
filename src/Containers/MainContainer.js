@@ -60,7 +60,7 @@ class MainContainer extends Component {
                 />
 
                 <Route
-                    exact path="/login"
+                    exact path="/"
                     render={()=>
                         <Login 
                         login = {this.props.login}

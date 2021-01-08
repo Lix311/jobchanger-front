@@ -31,7 +31,7 @@ class Login extends Component {
         let {newusername,newpassword,newemail,newavatar} = event.target
         this.props.signup(newusername.value, newpassword.value, newemail.value, newavatar.value)
 
-        this.props.history.push('/tasks')
+        this.props.history.push('/jobsearch')
 }
 
 
@@ -41,7 +41,7 @@ class Login extends Component {
         let {username,password} = event.target
         this.props.login(username.value, password.value)
         
-        this.props.history.push('/tasks')
+        this.props.history.push('/jobsearch')
     }
 
     signOut = (event) => {
