@@ -19,7 +19,7 @@ line-height: 1em;
 const NavBar = (props) => {
     return (  
         <BootstrapNav fixed='top' bg="light" variant="light">
-            <BootstrapNav.Brand href="/login">JobChanger</BootstrapNav.Brand>
+            <BootstrapNav.Brand href="/">JobChanger</BootstrapNav.Brand>
             {/* <Nav className="mr-auto"> */}
             <StyledLinks>
               <Link to="/jobsearch">Jobs</Link>

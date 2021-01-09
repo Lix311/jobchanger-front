@@ -63,37 +63,6 @@ class Login extends Component {
 render() { 
         return (  
             <div className='login-div'>
-               {/* <h1>Login</h1>
-                <Form className='login-form' onSubmit={(event) => this.handleLogin(event)}>
-                    <label>Username</label>
-                    <br/>
-                    <input 
-                        type='text' 
-                        placeholder='Please enter your username' 
-                        id='username' 
-                        name='username'
-                        value={this.state.username}
-                        onChange={this.handleInput}
-                    />
-                    <br/>
-                    <br/>
-                    <label>Password</label>
-                    <br/>
-                    <input 
-                        type='password' 
-                        placeholder='Please enter your password' 
-                        id='password' 
-                        name='password'
-                        value={this.state.password}
-                        onChange={this.handleInput}
-                    />
-                    <br/>
-                    <br/>
-                    <input type='submit' value='Login' />
-                    </Form> 
-               <button onClick={this.signOut}>Log Out</button>
-                    <br/>
-                    <br/> */}
                     
                     <Form className='login-form' onSubmit={(event) => this.handleLogin(event)}>
                         <Form.Group controlId="formBasicText">
@@ -108,10 +77,6 @@ render() {
                                     onChange={this.handleInput} />
                                 
                             </InputGroup>
-                            {/* <Form.Control type="email" placeholder="Enter email" /> */}
-                            {/* <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                            </Form.Text> */}
                         </Form.Group>
 
                         <Form.Group controlId="formBasicPassword">
@@ -126,7 +91,6 @@ render() {
                                     onChange={this.handleInput} />
                                 
                             </InputGroup>
-                            {/* <Form.Control type="password" placeholder="Password" /> */}
                         </Form.Group>
                         <br/>
                         <Button className='btn-lg btn-dark btn-block' variant="primary" type="submit">
@@ -138,63 +102,7 @@ render() {
                             <Link to='/signup'>Sign Up</Link>
                         </div>
                     </Form>
-
-                    {/* <h1>Create New User</h1>
-                <form onSubmit={(event) => this.handleNewUser(event)}>
-                    <label>Username</label>
-                    <br/>
-                    <input 
-                        type='text' 
-                        placeholder='Please enter your username' 
-                        id='newusername' 
-                        name='newusername'
-                        value={this.state.newusername}
-                        onChange={this.handleInput}
-                    />
-                    <br/>
-                    <br/>
-                    <label>Password</label>
-                    <br/>
-                    <input 
-                        type='password' 
-                        placeholder='Please enter your password' 
-                        id='newpassword' 
-                        name='newpassword'
-                        value={this.state.newpassword}
-                        onChange={this.handleInput}
-                    />
-                    <br/>
-                    <br/>
-                    <label>Email</label>
-                    <br/>
-                    <input 
-                        type='text' 
-                        placeholder='Please enter your email address' 
-                        id='newemail' 
-                        name='newemail'
-                        value={this.state.newemail}
-                        onChange={this.handleInput}
-                    />
-                    <br/>
-                    <br/>
-                    <label>Avatar</label>
-                    <br/>
-                    <input 
-                        type='text' 
-                        placeholder='Please enter your picture' 
-                        id='newavatar' 
-                        name='newavatar'
-                        value={this.state.newavatar}
-                        onChange={this.handleInput}
-                    />
-                    <br/>
-                    <br/>
-                    <input type='submit' value='Login' />
-                    </form> */}
-
-                    
-
-            </div>
+        </div>
         );
     }
 }

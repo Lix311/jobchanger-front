@@ -27,7 +27,7 @@ class JobDetails extends Component {
     
     <img
       className="d-block w-100"
-      src="https://images.pexels.com/photos/5408915/pexels-photo-5408915.jpeg?cs=srgb&dl=pexels-olya-kobruseva-5408915.jpg&fm=jpg"
+      src="images/pic1-min.jpg"
       alt="First slide"
     />
     <Carousel.Caption>
@@ -43,7 +43,7 @@ class JobDetails extends Component {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://images.pexels.com/photos/4491469/pexels-photo-4491469.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4491469.jpg&fm=jpg"
+      src="images/pic2-min.jpg"
 
       alt="Second slide"
     />
@@ -61,7 +61,7 @@ class JobDetails extends Component {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="https://images.pexels.com/photos/5424647/pexels-photo-5424647.jpeg?cs=srgb&dl=pexels-amina-filkins-5424647.jpg&fm=jpg"
+      src="images/pic3-min.jpg"
 
       alt="Third slide"
     />
@@ -81,6 +81,7 @@ class JobDetails extends Component {
   <Button onClick={this.formPopUp} variant="primary">Add to Planner</Button>
   {this.props.currentDetails.logo ? <img className='movie-img' src={this.props.currentDetails.logo}/> : ''}
   </div>
+
       <Modal.Title>{this.props.currentDetails.title}</Modal.Title>
       
         <div class="job-stuff">

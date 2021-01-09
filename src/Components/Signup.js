@@ -59,7 +59,7 @@ class Signup extends Component {
     
 render() { 
         return (  
-            <div className='login-div'>
+            <div className='signup-div'>
                {/* <h1>Login</h1>
                 <Form className='login-form' onSubmit={(event) => this.handleLogin(event)}>
                     <label>Username</label>
