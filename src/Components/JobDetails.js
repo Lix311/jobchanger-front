@@ -78,7 +78,7 @@ class JobDetails extends Component {
   <Modal.Header>
   {console.log(this.props.show)}
   <div className='logoandbtn'>
-  <Button onClick={this.formPopUp} variant="primary">Add to Planner</Button>
+  <Button onClick={() => this.props.addGitJob(this.props)} variant="primary">Add to Planner</Button>
   {this.props.currentDetails.logo ? <img className='movie-img' src={this.props.currentDetails.logo}/> : ''}
   </div>
 

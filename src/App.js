@@ -94,6 +94,37 @@ deleteJob = (job) => {
     // I needed to change email
 }
 
+  addGitJob = (props) => {
+    let newJob = {
+      user_id: this.state.currentUser.id,
+      job_id: this.state.staticJobs.length + 1, 
+      company: props.currentDetails.company,
+      title: props.currentDetails.title,
+      status: 'Applied',
+      next_step: 'Waiting',
+      job_date: '',
+      job_time: '',
+      contact: '',
+      notes: ''
+    }
+
+    this.setState({userJobs: [...this.state.userJobs, newJob]})
+    this.setState({userCurrentJobs: [...this.state.userCurrentJobs, newJob]})
+
+    fetch('http://localhost:3001/userjobs', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({userjob: newJob})
+      })
+      .then(r => r.json())
+
+    
+    
+  }
+
   addJob = (event) => {
     event.preventDefault()
     let newJob = {
@@ -255,6 +286,7 @@ nextPage = () => {
     return (  
       <div className="App">
         <MainContainer 
+          addGitJob = {this.addGitJob}
           searchGit = {this.searchGitJob}
           totalGitJobs = {this.state.jobs}
           currentGitJobs = {currentGitJobs} // only first 5

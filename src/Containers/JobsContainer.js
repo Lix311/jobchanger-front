@@ -53,7 +53,7 @@ class JobsContainer extends Component {
                                     nextPage = {this.props.nextPage}
                                     />
                     </div>
-                    {<JobDetails currentDetails={this.state.currentDetails} show={this.state.addModalShow}/>}
+                    {<JobDetails addGitJob={this.props.addGitJob} currentDetails={this.state.currentDetails} show={this.state.addModalShow}/>}
                 </div>
             </div>
         );

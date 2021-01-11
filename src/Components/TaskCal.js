@@ -9,9 +9,11 @@ class TaskCal extends Component {
         events: []
     }
 
+    
+
     setDates = () => {
+
         this.props.currentJobs.map(job => {
-            
             // let starttime = new Date(newtime)
             // let m = moment(newtime)
             let newtime = ''
@@ -26,20 +28,15 @@ class TaskCal extends Component {
                 end: new Date(newtime), 
                 title: `${job.company}`
             })
-
         }
-        
-            
-            
             const newDateWithTimezonedString = new Date("2020-10-28T21:32:00.000Z");  // Wed Oct 28 2020 17:32:00 GMT-0400 (Eastern Daylight Time)
             const newDateNoTimezonedString = new Date("2020-10-28T21:32:00.000");  // Wed Oct 28 2020 21:32:00 GMT-0400 (Eastern Daylight Time)
-                
-            
         })
     }
 
     render() { 
-        this.setDates()
+        
+        this.setDates();
         return (  
         <div className='wierdcal'>
             <Calendar

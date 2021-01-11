@@ -19,6 +19,7 @@ class MainContainer extends Component {
                     exact path="/jobsearch"
                     render={()=>
                         <JobsContainer
+                        addGitJob={this.props.addGitJob}
                         totalGitJobs = {this.props.totalGitJobs}
                         currentGitJobs = {this.props.currentGitJobs}
                         postsPerPage={this.props.postsPerPage} 
@@ -44,6 +45,7 @@ class MainContainer extends Component {
                     exact path="/jobs"
                     render={()=>
                         <UserJobsContainer 
+                        
                         totalJobs={this.props.totalJobs}
                         addJob={this.props.addJob}
                         currentJobs={this.props.currentJobs}
