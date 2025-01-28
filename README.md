@@ -1,69 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# JobChanger - Frontend 🚀
 
-## Available Scripts
+JobChanger is a web application built with React, Rails, and PostgreSQL to help users manage their job applications. It allows users to track their job search progress, update job status, and store key information about each application. 📑
 
-In the project directory, you can run:
+## Demo 🎥
 
-### `yarn start`
+You can view a demo of the app here:  
+[JobChanger Demo](https://vimeo.com/manage/videos/498552531) 🎬
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features 🌟
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- ✅ User authentication with sign-up and login.
+- 🔍 Search and filter job listings.
+- 📋 Manage job applications: add, edit, and delete.
+- 📑 Pagination to navigate job listings.
+- 💻 Responsive layout using Bootstrap.
+- 🔗 Integration with GitHub jobs API and internal static job listings.
 
-### `yarn test`
+## Tech Stack 🛠️
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend:** React, Bootstrap, JavaScript (ES6+)
+- **Backend:** Rails, PostgreSQL (for API and data storage)
+- **API Integration:** GitHub Jobs API for additional job listings
 
-### `yarn build`
+## Installation ⚙️
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites 📝
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Ensure you have the following installed:
+- **Node.js (v16.x)**: If you need to downgrade to Node.js v16, follow the steps below. 🛠️
+- **Yarn (optional but recommended)**: To manage dependencies.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Steps 📥
 
-### `yarn eject`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Lix311/jobchanger-front.git
+   cd jobchanger-front
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install Dependencies:
+   ```bash
+   npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. Run the application:
+   ```bash
+   npm start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Downgrading Node.js to v16
 
-## Learn More
+If you're using a version of Node.js newer than v16, you may experience compatibility issues. Follow these steps to downgrade to Node.js v16:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Using NVM (Node Version Manager)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Install NVM (if you haven't already)**  
+   Follow the instructions in the official NVM repository to install NVM.
 
-### Code Splitting
+2. **Install Node.js v16**  
+   Run the following command to install Node.js v16:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+   ```bash
+   nvm install 16
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# JobChanger
+   
